@@ -1,6 +1,6 @@
 <!-- footer -->
 <footer class="fl-wrap main-footer">
-      <div class="container">
+      <div class="container hide">
           <!-- footer-widget-wrap -->
           <div class="footer-widget-wrap fl-wrap">
               <div class="row">

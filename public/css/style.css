@@ -1686,7 +1686,7 @@ section {
 /*------ footer-------------------------------------------------*/
 .main-footer {
 	background: #222020;
-	padding: 40px 0 0;
+	padding: 20px 0 0;
 }
 .footer-widget-title {
     text-align: left;
@@ -1703,7 +1703,7 @@ section {
 }
 .footer-bottom {
 	padding: 10px 0;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     background: #222;
 }
 .footer-logo {

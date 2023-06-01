@@ -41,46 +41,44 @@
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body table-responsive">
-                                          <table id="role" class="table table-bordered table-striped">
+                                          <table id="blogs" class="table table-bordered table-striped">
                                                 <thead>
                                                       <tr>
                                                         <th>#</th>
-                                                            <th>Blog</th>
-                                                            <th>Category</th>
-                                                            <th>Tags</th>
-                                                            <th>Status</th>
-                                                            <th>Action</th>
+                                                        <th>Blog</th>
+                                                        <th>Category</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
                                                       </tr>
                                                 </thead>
                                                 <tbody>
                                                       @forelse ($dataArr as $ar)
                                                             <tr id="row_{{$ar->id}}" class="role_row">
                                                                 <td>{{ $ar->id }}</td>
-                                                                  <td>{{ $ar->title }}</td>
-                                                                  <td>{{ $ar->category->title }}</td>
-                                                                  <td>{{ '' }}</td>
-                                                                  <td>
-                                                                        @if( $ar->status == 0 )
-                                                                              <span class="badge badge-pill badge-warning"> Disabled </span>
-                                                                        @else
-                                                                              <span class="badge badge-pill badge-success"> Enabled </span>
-                                                                        @endif
-                                                                  </td>
-                                                                  <td class="d-flex">
-                                                                        <div class="pr-2">
-                                                                              <a href="{{ route('admin.blogs.edit', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center"><i class="fas fa-pencil-alt fa-sm" aria-hidden="true"></i></a>
-                                                                        </div>
-                                                                        <div class="pr-2 d-none">
-                                                                              {{-- <a href="{{ route('admin.blogs.view', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;"><i class="fas fa-eye fa-sm" aria-hidden="true"></i></a> --}}
-                                                                        </div>
-                                                                        <div class="pr-2">
-                                                                              {{-- <form action="{{ route('admin.blogs.delete', [$ar->id] ) }}" method="POST">
-                                                                                    @method('DELETE')
-                                                                                    @csrf --}}
-                                                                                    <button class="btn btn-danger btn-size p-0 d-flex align-items-center justify-content-center delete-record" data-id="{{$ar->id}}" data-title="{{ $ar->title }}" data-segment="blogs"><i class="fa fa-trash fa-sm" aria-hidden="true"></i></button>
-                                                                              {{-- </form> --}}
-                                                                        </div>
-                                                                  </td>
+                                                                <td>{{ $ar->title }}</td>
+                                                                <td>{{ $ar->category->title }}</td>
+                                                                <td>
+                                                                    @if( $ar->status == 0 )
+                                                                            <span class="badge badge-pill badge-warning"> Disabled </span>
+                                                                    @else
+                                                                            <span class="badge badge-pill badge-success"> Enabled </span>
+                                                                    @endif
+                                                                </td>
+                                                                <td class="d-flex">
+                                                                    <div class="pr-2">
+                                                                        <a href="{{ route('admin.blogs.edit', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center"><i class="fas fa-pencil-alt fa-sm" aria-hidden="true"></i></a>
+                                                                    </div>
+                                                                    <div class="pr-2 d-none">
+                                                                        {{-- <a href="{{ route('admin.blogs.view', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;"><i class="fas fa-eye fa-sm" aria-hidden="true"></i></a> --}}
+                                                                    </div>
+                                                                    <div class="pr-2">
+                                                                        {{-- <form action="{{ route('admin.blogs.delete', [$ar->id] ) }}" method="POST">
+                                                                            @method('DELETE')
+                                                                            @csrf --}}
+                                                                            <button class="btn btn-danger btn-size p-0 d-flex align-items-center justify-content-center delete-record" data-id="{{$ar->id}}" data-title="{{ $ar->title }}" data-segment="blogs"><i class="fa fa-trash fa-sm" aria-hidden="true"></i></button>
+                                                                        {{-- </form> --}}
+                                                                    </div>
+                                                                </td>
                                                             </tr>
                                                       @empty
                                                             <tr class="text-center">
@@ -88,15 +86,14 @@
                                                             </tr>
                                                       @endforelse
                                                 </tbody>
-                                                <tfoot  class="d-none">
-                                                      <tr>
+                                                <tfoot class="d-none">
+                                                    <tr>
                                                         <th>#</th>
                                                         <th>Blog</th>
                                                         <th>Category</th>
-                                                        <th>Tags</th>
                                                         <th>Status</th>
                                                         <th>Action</th>
-                                                      </tr>
+                                                    </tr>
                                                 </tfoot>
                                           </table>
                                     </div>
@@ -121,7 +118,7 @@
                   // "buttons": ["csv", "excel", "pdf"]
                   //     "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#blogs_wrapper .col-md-6:eq(0)');
-            setSearchPaginationPlace( "#blog_wrapper" );
+            setSearchPaginationPlace( "#blogs_wrapper" );
       });
 </script>
 @include('admin.elements.footer')
