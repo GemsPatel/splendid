@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Admin\Blogs;
 use App\Models\Admin\Categories;
 use App\Models\Admin\Configuration;
 
@@ -73,4 +74,11 @@ function es_GenerateBladeFile( $fileName="test")
     fwrite($fp, $content);
     fclose($fp);
     chmod($file, 0777);  //changed to add the zero
+}
+
+/**
+ *
+ */
+function getHostStories(){
+    return Blogs::select( "slug", "title" )->where( [ 'status' => 1 ] )->inRandomOrder()->limit(12)->get();
 }

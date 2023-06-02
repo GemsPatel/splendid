@@ -12,10 +12,11 @@
                   <div class="hnt_title">Hot Splendid :</div>
                   <div class="header_news-ticker fl-wrap">
                       <ul>
-                          <li><a href="{{url('post-single')}}">They chose to leave rather than put up with a governor who follows science .</a></li>
-                          <li><a href="{{url('post-single')}}">Hold On to Your Travel Dreams in the World.</a></li>
-                          <li><a href="{{url('post-single')}}">White  endorses bill that would ensure abortion access.</a></li>
-                          <li><a href="{{url('post-single')}}">NFL Power Rankings 2021: How all 32 teams stack up after Week 2.</a></li>
+                            @foreach ( getHostStories() as $data )
+                                <li>
+                                    <a href="{{url('view/'.$data->slug)}}">{{$data->title}}</a>
+                                </li>
+                            @endforeach
                       </ul>
                   </div>
                   <div class="n_contr-wrap">

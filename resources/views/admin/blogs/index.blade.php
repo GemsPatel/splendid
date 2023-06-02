@@ -18,17 +18,17 @@
             </div><!-- /.container-fluid -->
       </section>
 
-      <section class="content-header">
-            <div class="container-fluid">
-                  <div class="row">
-                        <div class="col-sm-12">
-                              @if(Session::has('message'))
+      @if(Session::has('message'))
+            <section class="content-header">
+                  <div class="container-fluid">
+                        <div class="row">
+                              <div class="col-sm-12">
                                     <p class="alert alert-info mb-0">{{ Session::get('message') }}</p>
-                              @endif
+                              </div>
                         </div>
                   </div>
-            </div>
-      </section>
+            </section>
+      @endif
 
       <!-- Main content -->
       <section class="content">
@@ -41,30 +41,32 @@
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body table-responsive">
-                                          <table id="blogs" class="table table-bordered table-striped">
+                                          <table id="blogs" class="table table-bordered table-striped" data-order='[[ 4, "desc" ]]'>
                                                 <thead>
                                                       <tr>
                                                         <th>#</th>
-                                                        <th>Blog</th>
-                                                        <th>Category</th>
-                                                        <th>Status</th>
-                                                        <th>Action</th>
+                                                        <th class="text-center">Blog</th>
+                                                        <th class="text-center">Category</th>
+                                                        <th class="text-center">Status</th>
+                                                        <th class="text-center">Updated At</th>
+                                                        <th class="text-center">Action</th>
                                                       </tr>
                                                 </thead>
                                                 <tbody>
                                                       @forelse ($dataArr as $ar)
                                                             <tr id="row_{{$ar->id}}" class="role_row">
-                                                                <td>{{ $ar->id }}</td>
+                                                                <td class="text-center">{{ $ar->id }}</td>
                                                                 <td>{{ $ar->title }}</td>
-                                                                <td>{{ $ar->category->title }}</td>
-                                                                <td>
+                                                                <td class="text-center">{{ $ar->category->title }}</td>
+                                                                <td class="text-center">
                                                                     @if( $ar->status == 0 )
                                                                             <span class="badge badge-pill badge-warning"> Disabled </span>
                                                                     @else
                                                                             <span class="badge badge-pill badge-success"> Enabled </span>
                                                                     @endif
                                                                 </td>
-                                                                <td class="d-flex">
+                                                                <td class="text-center">{{ formatDate( "d-m-Y h:i", $ar->updated_at ) }}</td>
+                                                                <td class="d-flex text-center">
                                                                     <div class="pr-2">
                                                                         <a href="{{ route('admin.blogs.edit', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center"><i class="fas fa-pencil-alt fa-sm" aria-hidden="true"></i></a>
                                                                     </div>
@@ -86,15 +88,6 @@
                                                             </tr>
                                                       @endforelse
                                                 </tbody>
-                                                <tfoot class="d-none">
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Blog</th>
-                                                        <th>Category</th>
-                                                        <th>Status</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </tfoot>
                                           </table>
                                     </div>
                                     <!-- /.card-body -->

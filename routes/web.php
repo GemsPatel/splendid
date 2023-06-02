@@ -54,7 +54,7 @@ Route::get('generate-category-seeder',[CronController::class, 'generateCategoryS
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('update-country-flag', [CronController::class, 'updateCountryFlag']);
-Route::get('twilio-send-msg', [CronController::class, 'sendTwilioMessage']);
+Route::get('/test-speech', [CronController::class, 'testTextToSpeech']);
 
 /**
  * Temp Routes

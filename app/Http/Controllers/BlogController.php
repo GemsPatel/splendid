@@ -63,6 +63,8 @@ class BlogController extends Controller
                     // ->offset(5)
                     ->limit(6)
                     ->get();
+
+
         return view('front.blog-listing', compact('blogArr', 'recentArr'));
     }
 

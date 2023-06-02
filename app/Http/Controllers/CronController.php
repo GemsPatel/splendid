@@ -13,6 +13,8 @@ use App\Models\Notification;
 use DateTime;
 use Twilio\Rest\Client;
 use ZipArchive;
+use Cion\TextToSpeech\Facades;
+use Cion\TextToSpeech\Facades\TextToSpeech;
 
 class CronController extends Controller
 {
@@ -36,26 +38,15 @@ class CronController extends Controller
      */
     public function updateCountryFlag()
     {
+        return TextToSpeech::source('website')
+            ->convert('https://splendid.shreegurve.tech/view/5-ways-to-build-resilient-leadership-in-challenging-times');
+
         $countryArr = Country::all();
 
         foreach( $countryArr as $ar ){
             $ar->image = "public/country/".$ar->sortname.".png";
             $ar->save();
         }
-    }
-
-    /**
-     * Sends sms to user using Twilio's programmable sms client
-     * @param String $message Body of sms
-     * @param Number $recipients string or array of phone number of recepient
-     */
-    function sendTwilioMessage($message="This is a testing msg", $recipients="+918200017181")
-    {
-        // $account_sid = getConfigurationfield("TWILIO_SID");
-        // $auth_token = getConfigurationfield("TWILIO_AUTH_TOKEN");
-        // $twilio_number = getConfigurationfield("TWILIO_NUMBER");
-        $client = new Client( getConfigurationfield("TWILIO_SID"), getConfigurationfield("TWILIO_AUTH_TOKEN"));
-        $client->messages->create($recipients, [ 'body' => $message, 'from' => getConfigurationfield("TWILIO_NUMBER") ] );
     }
 
     /**
@@ -281,5 +272,15 @@ class CronController extends Controller
                 $blog->save();
             }
         }
+    }
+
+    /**
+     *
+     */
+    public function testTextToSpeech(){
+        echo "here";die;
+        // convert website articles & blog posts to an audio file
+        return TextToSpeech::source('website')
+            ->convert('https://medium.com/cloud-academy-inc/an-introduction-to-aws-polly-s3-and-php-479490bffcbd');
     }
 }

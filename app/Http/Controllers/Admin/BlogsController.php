@@ -39,7 +39,7 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $dataArr = Blogs::with('category', 'sub_category')->get();
+        $dataArr = Blogs::with('category', 'sub_category')->orderBy( 'id', 'desc' )->get();
         return view('admin.blogs.index', compact('dataArr'));
     }
 
