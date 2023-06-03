@@ -32,8 +32,9 @@ Route::get('/clear', function () {
 // });
 
 Route::get('/', [BlogController::class, 'index']);
-Route::get('category/{slug}', [BlogController::class, 'getCategoryWiseBlogs']);
+Route::get('category/{slug}', [BlogController::class, 'getCategoryWiseBlogs'])->name('getCategoryWiseBlogs');
 Route::get('view/{slug}', [BlogController::class, 'getBlogDetails']);
+Route::get('read-all', [BlogController::class, 'getBlogLists'])->name( 'readAll' );
 
 //testing function
 Route::get('/get-xml-mp3', [CronController::class, 'getXMLMP3']);

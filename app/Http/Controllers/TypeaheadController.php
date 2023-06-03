@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin\Author;
-use App\Models\Admin\AuthorType;
 use App\Models\Admin\Categories;
 use App\Models\Admin\Tags;
-use App\Models\Admin\Title;
 use Illuminate\Http\Request;
-use App\Models\User;
 
 class TypeaheadController extends Controller
 {
@@ -19,9 +15,9 @@ class TypeaheadController extends Controller
        */
       public function index()
       {
-            
+
       }
- 
+
       /**
        * @Function:        <__construct>
        * @Author:          Gautam Kakadiya( ShreeGurave Dev Team )
@@ -51,7 +47,7 @@ class TypeaheadController extends Controller
       {
             $query = $request->get('query');
             $parents = explode( '-', $parent_id );
-            $filterResult = Categories::where('title', 'LIKE', '%'. $query. '%')->where( ['status' => 1, 'level' => $type ])->whereIn( 'parent_id', $parents )->get();//'parent_id' => $parent_id, 
+            $filterResult = Categories::where('title', 'LIKE', '%'. $query. '%')->where( ['status' => 1, 'level' => $type ])->whereIn( 'parent_id', $parents )->get();//'parent_id' => $parent_id,
             return response()->json($filterResult);
       }
 }

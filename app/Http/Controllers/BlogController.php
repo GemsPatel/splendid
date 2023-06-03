@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin\Blogs;
 use App\Models\Admin\Categories;
-use Illuminate\Support\Facades\Request;
-use Stevebauman\Location\Facades\Location;
+use Illuminate\Http\Request;
+
 
 class BlogController extends Controller
 {
@@ -22,10 +22,10 @@ class BlogController extends Controller
                     ->where( [ 'status' => 1 ] )
                     ->orderBy( 'view', 'desc' )
                     // ->offset(5)
-                    ->limit(12)
+                    ->limit(18)
                     ->get()
                     ->toArray();
-        $topStories = array_chunk( $topStories, 4 );
+        $topStories = array_chunk( $topStories, 6 );
 
         $recentArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
                     ->where( [ 'status' => 1 ] )
@@ -39,33 +39,31 @@ class BlogController extends Controller
                     ->inRandomOrder()
                     ->get();
 
-        //$ip = Request::ip();
-        //if( $ip == "127.0.0.1" || $ip == "1" )
-            $ip = "150.107.232.217";
-        //}
-        $locationPosition = Location::get( $ip );
-
-        return view('front.index', compact('topStories', 'topSliderArr', 'locationPosition', 'recentArr', 'bestCategories' ));
+        return view('front.index', compact('topStories', 'topSliderArr', 'recentArr', 'bestCategories' ));
     }
 
     /**
      *
      */
     function getCategoryWiseBlogs( Request $request, $slug="" ){
+        $search = $request->q;
         $category = Categories::where( 'slug', $slug )->first();
         $blogArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
                     ->where( [ 'category_id' => $category->id, 'status' => 1 ] )
+                    ->when( $search, function ($query, $search) {
+                        return $query->where( 'title',  'LIKE', '%'.$search.'%' )
+                        ->where( 'short_description', 'LIKE', '%'.$search.'%' );
+                    })
                     ->paginate(15);
 
         $recentArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
                     ->where( [ 'status' => 1 ] )
                     ->orderBy( 'id', 'desc' )
-                    // ->offset(5)
                     ->limit(6)
                     ->get();
 
-
-        return view('front.blog-listing', compact('blogArr', 'recentArr'));
+        $action = url('category/'.$slug );
+        return view('front.blog-listing', compact('blogArr', 'recentArr', 'slug', 'action', 'request'));
     }
 
     /**
@@ -94,5 +92,37 @@ class BlogController extends Controller
         Blogs::increment( 'view', 1 ); // count + 5
 
         return view('front.blog-details', compact( 'data', 'categories', 'recentArr', 'prevBlog', 'nextBlog' ) );
+    }
+
+    /**
+     *
+     */
+    function getBlogLists( Request $request, $search='' ){
+
+        $blogArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
+                    ->where( [ 'status' => 1 ] );
+                    if( $request->q ){
+                        $search = $request->q;
+                        $blogArr = $blogArr->where( 'title',  'LIKE', '%'.$search.'%' )
+                        ->orWhere( 'short_description', 'LIKE', '%'.$search.'%' );
+                    }
+        $blogArr = $blogArr->orderBy( 'id', 'desc' )
+                ->paginate(15);
+
+        $bestCategories = Categories::with('blog_best_single_view')
+                    ->where( [ 'status' => 1 ] )
+                    ->inRandomOrder()
+                    ->get();
+
+        $recentArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
+                    ->where( 'status', 1 )
+                    ->orderBy( 'id', 'desc' )
+                    ->offset(5)
+                    ->limit(6)
+                    ->get();
+
+        $slug = '';
+        $action = route('readAll');
+        return view('front.blog-listing', compact('blogArr', 'bestCategories', 'recentArr', 'slug', 'action', 'request' ));
     }
 }

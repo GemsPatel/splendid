@@ -4,16 +4,12 @@
 * @Author:          Gautam Kakadiya
 * @Created On:      <07-03-2019>
 * @Last Modified By:
-* @Last Modified: 
+* @Last Modified:
 * @Description:     <This methode print data in array formate>
 */
 
-use App\Models\Admin\AdminMenu;
-use App\Models\Admin\Permission;
-use App\Models\Admin\Role;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 
 /*---------------------------------------------
@@ -30,7 +26,7 @@ function pr($data , $die = false)
 * @Author:          Gautam Kakadiya
 * @Created On:      <07-03-2019>
 * @Last Modified By:
-* @Last Modified: 
+* @Last Modified:
 * @Description:     <This methode unsetdata from 'From' request>
 */
 function unsetData($dataArray = array(), $unsetDataArray = array())
@@ -102,7 +98,7 @@ function generateCSV($header, $data, $fileName)
 
     header('Content-type: application/xlsx');
     header('Content-Disposition: attachment; filename=' . $fileName);
- 
+
     fputcsv($fp, $header);
 
     foreach ($data as $singleRecord) {
@@ -118,7 +114,7 @@ function generateCSV($header, $data, $fileName)
 * @Author:          Gautam Kakadiya
 * @Created On:      <1-04-2019>
 * @Last Modified By: Gautam Kakadiya
-* @Last Modified: 
+* @Last Modified:
 * @Description:     <For check url have https or not >
 * @Returns:         <   >
 */
@@ -131,7 +127,7 @@ function checkUrl($request_url)
                 return $http_url;
             } else
                 return $request_url;
-        } else 
+        } else
             return $request_url;
     }
     return $request_url;
@@ -146,7 +142,7 @@ function getCookie($name)
 {
     if (isset($_COOKIE[$name]))
         return $_COOKIE[$name];
-    
+
     return '';
 }
 
@@ -167,7 +163,7 @@ function unsetCookie($name, $path)
  * @Last Modified By:Gautam Kakadiya
  * @Last Modified:   Gautam Kakadiya
  * @Description:     <This function is Converting database format date to convienant form >
- * @params : 
+ * @params :
  * @date : Date which you get from database.
  * @format : Format you want to retrieve.
  * @return :
@@ -333,54 +329,6 @@ if ( ! function_exists('url_title'))
 
 		return trim($str, $separator);
 	}
-}
-
- /**
-     * @Function:        <getAdminSideMenu>
-     * @Author:          Gautam Kakadiya( ShreeGurave Dev Team )
-     * @Created On:      <24-11-2021>
-     * @Last Modified By:Gautam Kakadiya
-     * @Last Modified:   Gautam Kakadiya
-     * @Description:     <This function work for get admin panel side bar menu.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-function getAdminSideMenu(){
-    $parentArr = AdminMenu::where( ['parent_id' => 0, 'status' => 1 ] )->orderBy( 'sort_order', 'ASC' )->get();
-    if( COUNT( $parentArr ) >0 ){
-        foreach( $parentArr as $k=>$parent ){
-            $parentArr[$k]['childArr'] = AdminMenu::where( [ 'parent_id' => $parent->id, 'status' => 1 ] )->orderBy( 'sort_order', 'ASC' )->get();
-        }
-    }
-
-    return $parentArr;
-}
-
-/**
- * @Function:        <getAdminSideMenuPerimission>
- * @Author:          Gautam Kakadiya( ShreeGurave Dev Team )
- * @Created On:      <24-11-2021>
- * @Last Modified By:Gautam Kakadiya
- * @Last Modified:   Gautam Kakadiya
- * @Description:     <This function work for get admin panel side bar menu.
- *
- * @param  \Illuminate\Http\Request  $request
- * @param  int  $id
- * @return \Illuminate\Http\Response
- */
-function getAdminSideMenuPerimission(){
-    $user = Auth::guard('admin')->user();
-    $permissionArr = Permission::where( 'role_id', $user->role_id )->get()->pluck('menu_id');
-    $result = [];
-    if( !$permissionArr->isEmpty() ){
-        foreach( $permissionArr as $id ){
-            $result[] = $id;
-        }
-    }
-
-    return $result;
 }
 
 /**

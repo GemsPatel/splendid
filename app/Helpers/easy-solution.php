@@ -3,6 +3,11 @@
 use App\Models\Admin\Blogs;
 use App\Models\Admin\Categories;
 use App\Models\Admin\Configuration;
+use Stevebauman\Location\Facades\Location;
+use Illuminate\Support\Facades\Request as FacadesRequest;
+use App\Models\Admin\AdminMenu;
+use App\Models\Admin\Permission;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Undocumented function
@@ -81,4 +86,66 @@ function es_GenerateBladeFile( $fileName="test")
  */
 function getHostStories(){
     return Blogs::select( "slug", "title" )->where( [ 'status' => 1 ] )->inRandomOrder()->limit(12)->get();
+}
+
+/**
+ *
+ */
+function getCurrentLocationDetails( $res='cityName' ){
+    $ip = FacadesRequest::ip();
+    if( $ip == "127.0.0.1" || $ip == "::1" ){
+        $ip = "150.107.232.217";
+    }
+
+    $locationPosition = Location::get( $ip );
+    return $locationPosition->$res;
+}
+
+/**
+ * @Function:        <getAdminSideMenu>
+ * @Author:          Gautam Kakadiya( ShreeGurave Dev Team )
+ * @Created On:      <24-11-2021>
+ * @Last Modified By:Gautam Kakadiya
+ * @Last Modified:   Gautam Kakadiya
+ * @Description:     <This function work for get admin panel side bar menu.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+function getAdminSideMenu(){
+    $parentArr = AdminMenu::where( ['parent_id' => 0, 'status' => 1 ] )->orderBy( 'sort_order', 'ASC' )->get();
+    if( COUNT( $parentArr ) >0 ){
+        foreach( $parentArr as $k=>$parent ){
+            $parentArr[$k]['childArr'] = AdminMenu::where( [ 'parent_id' => $parent->id, 'status' => 1 ] )->orderBy( 'sort_order', 'ASC' )->get();
+        }
+    }
+
+    return $parentArr;
+}
+
+
+/**
+ * @Function:        <getAdminSideMenuPerimission>
+ * @Author:          Gautam Kakadiya( ShreeGurave Dev Team )
+ * @Created On:      <24-11-2021>
+ * @Last Modified By:Gautam Kakadiya
+ * @Last Modified:   Gautam Kakadiya
+ * @Description:     <This function work for get admin panel side bar menu.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+function getAdminSideMenuPerimission(){
+    $user = Auth::guard('admin')->user();
+    $permissionArr = Permission::where( 'role_id', $user->role_id )->get()->pluck('menu_id');
+    $result = [];
+    if( !$permissionArr->isEmpty() ){
+        foreach( $permissionArr as $id ){
+            $result[] = $id;
+        }
+    }
+
+    return $result;
 }

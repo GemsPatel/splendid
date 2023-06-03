@@ -127,16 +127,10 @@
             <img src="{{url('public/img/user-thumbnail.png')}}" alt="Profile Update" class="brand-image img-circle elevation-3 " style="height: 26px;width: 26px;"  >
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{{ url('/') }}" target="_blank">View Front</a>
-              <a class="dropdown-item" href="{{ route('admin.update-profile') }}">Update Password</a>
+                <a class="dropdown-item" href="{{ url('/') }}" target="_blank">View Front</a>
+                <a class="dropdown-item d-none" href="{{ route('admin.update-profile') }}">Update Password</a>
+                <a class="dropdown-item"  href="{{url('admin/logout')}}" >Sign Out</a>
           </div>
-        </li>
-        <li class="nav-item d-flex justify-content-end">
-
-          <a class="nav-link text-right pl-0"  href="{{url('admin/logout')}}" ><!-- data-widget="control-sidebar" data-slide="true"  role="button" -->
-            {{-- <i class="fa fa-lock"></i> --}}
-            <img src="{{url('public/img/log-out.png')}}" alt="Genti" class="brand-image img-circle elevation-3" style="height: 26px;width: 26px;"  >
-          </a>
         </li>
       </ul>
     </nav>

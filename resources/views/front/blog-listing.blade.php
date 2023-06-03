@@ -2,7 +2,7 @@
 <div class="breadcrumbs-header fl-wrap">
     <div class="container">
         <div class="breadcrumbs-header_url">
-            <a href="{{url('/')}}">Home</a><span>Blog List style</span>
+            <a href="{{url('/')}}">Home</a><span>Splend List</span>
         </div>
         <div class="scroll-down-wrap">
             <div class="mousey">
@@ -41,7 +41,6 @@
                                             <div class="bg" data-bg="{{url('storage/app/'.$ar->image)}}"></div>
                                         </div>
                                     </a>
-                                    <span class="post-media_title">&copy; Image Copyrights Title</span>
                                 </div>
                                 <div class="list-post-content">
                                     <a class="post-category-marker" href="{{url('view/'.$ar->slug)}}">{{$ar->category->title}}</a>
@@ -56,20 +55,20 @@
                                 </div>
                             </div>
                         @empty
-
+                            <div class="list-post fl-wrap">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h1>No {{$request->q}} Result Found!</h1>
+                                    </div>
+                                </div>
+                            </div>
                         @endforelse
                         <!--list-post end-->
                     </div>
                     <div class="clearfix"></div>
-                    {{-- <div class="load-more_btn hide"><i class="fal fa-undo"></i>Load More</div> --}}
                     <!--pagination-->
                     <div class="pagination">
-                        <a href="#" class="prevposts-link"><i class="fas fa-caret-left"></i></a>
-                        <a href="#">01.</a>
-                        <a href="#" class="current-page">02.</a>
-                        <a href="#">03.</a>
-                        <a href="#">04.</a>
-                        <a href="#" class="nextposts-link"><i class="fas fa-caret-right"></i></a>
+                        {!! $blogArr->links() !!}
                     </div>
                     <!--pagination end-->
                 </div>

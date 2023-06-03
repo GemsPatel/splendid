@@ -102,4 +102,4 @@
         </div>
     </div>
 </div>
-{{-- <a href="{{url('blog2')}}" class="dark-btn fl-wrap"> Read all News </a> --}}
+<a href="{{url('read-all')}}" class="dark-btn fl-wrap"> Read all Splendid </a>
