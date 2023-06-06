@@ -61,7 +61,7 @@
                     <!-- single-post-media end   -->
                     <!-- single-post-content   -->
                     <div class="single-post-content  fl-wrap">
-                        <div class="fs-wrap smpar fl-wrap">
+                        <div class="fs-wrap smpar fl-wrap hide">
                             <div class="fontSize">
                                 <span class="fs_title">Font size: </span>
                                 <input type="text" class="rage-slider" data-step="1" data-min="15" data-max="20" value="15">

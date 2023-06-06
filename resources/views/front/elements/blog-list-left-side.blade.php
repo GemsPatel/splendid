@@ -31,11 +31,7 @@
       <!-- popular recent box-widget -->
       @include('front.elements.popular-recent')
       <!-- popular recent box-widget end -->
-      <!-- Location box-widget -->
-      <div class="box-widget fl-wrap hide">
-        <div class="box-widget-content">
-            <div id="weather-widget" class="ideaboxWeather" data-city="{{getCurrentLocationDetails()}}"></div>
-        </div>
-    </div>
-    <!-- Location box-widget end -->
+      <!-- Weather Location box-widget -->
+      @include('front.elements.weather-detail')
+    	<!-- Weather Location box-widget end -->
   </div>
