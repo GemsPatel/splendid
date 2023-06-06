@@ -82,6 +82,7 @@ return array(
     'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Money\\' => array($vendorDir . '/moneyphp/money/src'),
+    'Mockery\\' => array($vendorDir . '/mockery/mockery/library/Mockery'),
     'MaxMind\\WebService\\' => array($vendorDir . '/maxmind/web-service-common/src/WebService'),
     'MaxMind\\Exception\\' => array($vendorDir . '/maxmind/web-service-common/src/Exception'),
     'MaxMind\\Db\\' => array($vendorDir . '/maxmind-db/reader/src/MaxMind/Db'),

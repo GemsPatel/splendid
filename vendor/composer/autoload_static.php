@@ -41,6 +41,8 @@ class ComposerStaticInit4fef8e2aef068a73f00b1e84345f7ff1
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
+        'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
         'bab4ed692c1fd3872849227e2a85791e' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/Support/helpers.php',
@@ -164,6 +166,7 @@ class ComposerStaticInit4fef8e2aef068a73f00b1e84345f7ff1
             'MyCLabs\\Enum\\' => 13,
             'Monolog\\' => 8,
             'Money\\' => 6,
+            'Mockery\\' => 8,
             'MaxMind\\WebService\\' => 19,
             'MaxMind\\Exception\\' => 18,
             'MaxMind\\Db\\' => 11,
@@ -585,6 +588,10 @@ class ComposerStaticInit4fef8e2aef068a73f00b1e84345f7ff1
         array (
             0 => __DIR__ . '/..' . '/moneyphp/money/src',
         ),
+        'Mockery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
+        ),
         'MaxMind\\WebService\\' => 
         array (
             0 => __DIR__ . '/..' . '/maxmind/web-service-common/src/WebService',
@@ -902,13 +909,6 @@ class ComposerStaticInit4fef8e2aef068a73f00b1e84345f7ff1
     );
 
     public static $prefixesPsr0 = array (
-        'M' => 
-        array (
-            'Mockery' => 
-            array (
-                0 => __DIR__ . '/..' . '/mockery/mockery/library',
-            ),
-        ),
         'H' => 
         array (
             'HTMLPurifier' => 
@@ -6336,7 +6336,6 @@ class ComposerStaticInit4fef8e2aef068a73f00b1e84345f7ff1
         'MaxMind\\WebService\\Http\\CurlRequest' => __DIR__ . '/..' . '/maxmind/web-service-common/src/WebService/Http/CurlRequest.php',
         'MaxMind\\WebService\\Http\\Request' => __DIR__ . '/..' . '/maxmind/web-service-common/src/WebService/Http/Request.php',
         'MaxMind\\WebService\\Http\\RequestFactory' => __DIR__ . '/..' . '/maxmind/web-service-common/src/WebService/Http/RequestFactory.php',
-        'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
@@ -6357,6 +6356,7 @@ class ComposerStaticInit4fef8e2aef068a73f00b1e84345f7ff1
         'Mockery\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidArgumentException.php',
         'Mockery\\Exception\\InvalidCountException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidCountException.php',
         'Mockery\\Exception\\InvalidOrderException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidOrderException.php',
+        'Mockery\\Exception\\MockeryExceptionInterface' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/MockeryExceptionInterface.php',
         'Mockery\\Exception\\NoMatchingExpectationException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/NoMatchingExpectationException.php',
         'Mockery\\Exception\\RuntimeException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/RuntimeException.php',
         'Mockery\\Expectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Expectation.php',
@@ -6375,6 +6375,7 @@ class ComposerStaticInit4fef8e2aef068a73f00b1e84345f7ff1
         'Mockery\\Generator\\StringManipulationGenerator' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulationGenerator.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\AvoidMethodClashPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/AvoidMethodClashPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\CallTypeHintPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/CallTypeHintPass.php',
+        'Mockery\\Generator\\StringManipulation\\Pass\\ClassAttributesPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassAttributesPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ClassNamePass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassNamePass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ClassPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ConstantsPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ConstantsPass.php',
