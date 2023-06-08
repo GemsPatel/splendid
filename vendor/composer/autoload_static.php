@@ -6406,6 +6406,8 @@ class ComposerStaticInit4fef8e2aef068a73f00b1e84345f7ff1
         'Mockery\\Matcher\\Ducktype' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/Ducktype.php',
         'Mockery\\Matcher\\HasKey' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/HasKey.php',
         'Mockery\\Matcher\\HasValue' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/HasValue.php',
+        'Mockery\\Matcher\\IsEqual' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/IsEqual.php',
+        'Mockery\\Matcher\\IsSame' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/IsSame.php',
         'Mockery\\Matcher\\MatcherAbstract' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php',
         'Mockery\\Matcher\\MultiArgumentClosure' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php',
         'Mockery\\Matcher\\MustBe' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MustBe.php',

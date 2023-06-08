@@ -5493,6 +5493,8 @@ return array(
     'Mockery\\Matcher\\Ducktype' => $vendorDir . '/mockery/mockery/library/Mockery/Matcher/Ducktype.php',
     'Mockery\\Matcher\\HasKey' => $vendorDir . '/mockery/mockery/library/Mockery/Matcher/HasKey.php',
     'Mockery\\Matcher\\HasValue' => $vendorDir . '/mockery/mockery/library/Mockery/Matcher/HasValue.php',
+    'Mockery\\Matcher\\IsEqual' => $vendorDir . '/mockery/mockery/library/Mockery/Matcher/IsEqual.php',
+    'Mockery\\Matcher\\IsSame' => $vendorDir . '/mockery/mockery/library/Mockery/Matcher/IsSame.php',
     'Mockery\\Matcher\\MatcherAbstract' => $vendorDir . '/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php',
     'Mockery\\Matcher\\MultiArgumentClosure' => $vendorDir . '/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php',
     'Mockery\\Matcher\\MustBe' => $vendorDir . '/mockery/mockery/library/Mockery/Matcher/MustBe.php',
