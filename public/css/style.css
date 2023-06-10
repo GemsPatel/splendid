@@ -3425,8 +3425,8 @@ section {
 .sb-categories_bg_item {
 	position: relative;
     display: block;
-    padding: 40px 20px;
-    margin-bottom: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
     overflow: hidden;
     border-radius: 5px;
     background: #f5f5f5;
@@ -5178,8 +5178,8 @@ h4.cart-title span {
 	left:50%;
 	width:22px;
 	height:20px;
-	margin-left:-11px;
-	margin-top:-6px;
+	margin-left:-23px;
+	margin-top:-8px;
 }
 .nav-button span{
 	float:left;

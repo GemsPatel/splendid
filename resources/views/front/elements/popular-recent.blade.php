@@ -5,7 +5,7 @@
             <div class="content-tabs fl-wrap">
                 <ul class="tabs-menu fl-wrap no-list-style">
                     <li class="hide"><a href="#tab-popular"> Popular News </a></li>
-                    <li class="current w-100"><a href="#tab-resent">Resent Splend</a></li>
+                    <li class="current w-100"><a href="#tab-resent">Recent Splend</a></li>
                 </ul>
             </div>
             <!--tabs -->

@@ -63,7 +63,12 @@ class BlogController extends Controller
                     ->get();
 
         $action = url('category/'.$slug );
-        return view('front.blog-listing', compact('blogArr', 'recentArr', 'slug', 'action', 'request'));
+
+        $custom_page_title = $category->title;
+        $meta_description = $category->title;
+        $meta_keyword = $category->slug;
+
+        return view('front.blog-listing', compact('blogArr', 'recentArr', 'slug', 'action', 'request', 'custom_page_title', 'meta_description', 'meta_keyword' ));
     }
 
     /**
@@ -76,7 +81,7 @@ class BlogController extends Controller
 
         $categories = Categories::where( [ 'status' => 1 ] )
                     ->inRandomOrder()
-                    ->limit(10)
+                    ->limit(12)
                     ->get();
 
         $recentArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
@@ -91,7 +96,11 @@ class BlogController extends Controller
 
         Blogs::increment( 'view', 1 ); // count + 5
 
-        return view('front.blog-details', compact( 'data', 'categories', 'recentArr', 'prevBlog', 'nextBlog' ) );
+        $custom_page_title = $data->title;
+        $meta_description = $data->short_description;
+        $meta_keyword = $data->short_description;
+
+        return view('front.blog-details', compact( 'data', 'categories', 'recentArr', 'prevBlog', 'nextBlog', 'custom_page_title', 'meta_description', 'meta_keyword' ) );
     }
 
     /**

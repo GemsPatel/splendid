@@ -7,6 +7,7 @@ use Stevebauman\Location\Facades\Location;
 use Illuminate\Support\Facades\Request as FacadesRequest;
 use App\Models\Admin\AdminMenu;
 use App\Models\Admin\Permission;
+use App\Models\SiteConfig;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -148,4 +149,12 @@ function getAdminSideMenuPerimission(){
     }
 
     return $result;
+}
+
+
+/**
+ *
+ */
+function getHeaderInformation(){
+    return SiteConfig::where( 'id', 1 )->first();
 }

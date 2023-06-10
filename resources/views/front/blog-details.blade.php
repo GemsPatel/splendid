@@ -220,23 +220,27 @@
                         <div class="box-widget-content">
                             <div class="sb-categories_bg">
                                 <!-- sb-categories_bg_item -->
-                                @foreach ( $categories as $k=>$data )
-                                    <a href="{{url('category/'.$data->slug)}}" class="sb-categories_bg_item">
-                                        <div class="bg-wrap">
-                                            <div class="bg" data-bg="{{url('storage/app/'.$data->image)}}"></div>
-                                            <div class="overlay"></div>
+                                <div class="row">
+                                    @foreach ( $categories as $k=>$data )
+                                        <div class="col-md-6">
+                                            <a href="{{url('category/'.$data->slug)}}" class="sb-categories_bg_item">
+                                                <div class="bg-wrap">
+                                                    <div class="bg" data-bg="{{url('storage/app/'.$data->image)}}"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                                <div class="spb-categories_title"><span>{{$k+1}}.</span>{{$data->title}}</div>
+                                                {{-- <div class="spb-categories_counter">66</div> --}}
+                                            </a>
                                         </div>
-                                        <div class="spb-categories_title"><span>{{$k+1}}.</span>{{$data->title}}</div>
-                                        {{-- <div class="spb-categories_counter">66</div> --}}
-                                    </a>
-                                @endforeach
+                                    @endforeach
+                                </div>
                                 <!-- sb-categories_bg_item end-->
                             </div>
                         </div>
                     </div>
                     <!-- box-widget  end -->
                     <!-- box-widget -->
-                    <div class="box-widget fl-wrap">
+                    <div class="box-widget fl-wrap hide">
                         <div class="widget-title">Popular Tags</div>
                         <div class="box-widget-content">
                             <div class="tags-widget">
@@ -251,7 +255,7 @@
                     </div>
                     <!-- box-widget  end -->
                     <!-- box-widget -->
-                    <div class="box-widget fl-wrap">
+                    <div class="box-widget fl-wrap hide">
                         <div class="widget-title">Follow Us</div>
                         <div class="box-widget-content">
                             <div class="social-widget">
