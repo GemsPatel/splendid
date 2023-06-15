@@ -20,7 +20,7 @@
                                 <div class="clearfix"></div>
                                 <div class="author-link">
                                     <a href="{{url('author-single')}}">
-                                        <img src="{{url('public/img/avatar/4.jpg')}}" alt="">
+                                        <img class="b-lazy" src="{{url('public/img/avatar/4.jpg')}}" alt="">
                                         <span>By {{$slider->author->name}}</span>
                                     </a>
                                 </div>

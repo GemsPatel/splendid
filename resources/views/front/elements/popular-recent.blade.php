@@ -17,7 +17,9 @@
                             <!-- post-widget-item -->
                             <div class="post-widget-item fl-wrap">
                                 <div class="post-widget-item-media">
-                                    <a href="{{url('post-single')}}"><img src="{{url('public/img/all/thumbs/1.jpg')}}"  alt=""></a>
+                                    <a href="{{url('post-single')}}">
+										<img data-original="{{url('public/img/all/thumbs/1.jpg')}}"  class="lazyload">
+									</a>
                                 </div>
                                 <div class="post-widget-item-content">
                                     <h4><a href="{{url('post-single')}}">How to start Home education.</a></h4>
@@ -42,7 +44,7 @@
                                 <div class="post-widget-item fl-wrap">
                                     <div class="post-widget-item-media">
                                         <a href="{{url('view/'.$data->slug)}}">
-                                            <img src="{{url('storage/app/'.$data->image)}}" alt="{{$data->title}}">
+                                            <img class="lazyload" data-original="{{url('storage/app/'.$data->image)}}" alt="{{$data->title}}">
                                         </a>
                                     </div>
                                     <div class="post-widget-item-content">

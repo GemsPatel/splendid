@@ -36,8 +36,10 @@
       <!-- top bar end -->
       <div class="header-inner fl-wrap">
           <div class="container">
-              <!-- logo holder  -->
-              <a href="{{url('/')}}" class="logo-holder"><img src="{{url('public/img/logo.png')}}" alt=""></a>
+                <!-- logo holder  -->
+                <a href="{{url('/')}}" class="logo-holder">
+                    <img class="lazyload" data-original="{{url('public/img/logo.png')}}" alt="Times of Reading">
+                </a>
               <!-- logo holder end -->
               <div class="search_btn htact show_search-btn"><i class="far fa-search"></i> <span class="header-tooltip">Search</span></div>
               <div class="srf_btn htact show-reg-form hide"><i class="fal fa-user"></i> <span class="header-tooltip">Sign In</span></div>

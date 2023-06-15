@@ -335,8 +335,8 @@ blockquote:before {
 	float:left;
 	position:relative;
 	z-index:21;
-	height: 35px;
-    top: 18px;
+	height: 56px;
+    top: 8px;
 }
 .logo-holder img {
 	width: auto;

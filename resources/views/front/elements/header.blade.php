@@ -18,13 +18,14 @@
     	<meta http-equiv="vary" content="User-Agent">
         <link rel="canonical" href="{{ url('/') }}">
 
-        <!--=============== css  ===============-->
+        <!--=============== CSS ===============-->
         <link type="text/css" rel="stylesheet" href="{{url('public/css/plugins.css')}}">
         <link type="text/css" rel="stylesheet" href="{{url('public/css/style.css?v=0.1')}}">
         <link type="text/css" rel="stylesheet" href="{{url('public/css/color.css')}}">
+		
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="{{url('public/public/img/favicon.ico?v=0.1')}}">
-
+		
     </head>
     <body>
         <!-- main start  -->

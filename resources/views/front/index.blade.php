@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 <div class="main-container fl-wrap fix-container-init">
                     <div class="content-banner-wrap cbw_mar">
-                        <img src="{{url('public/img/all/banner.jpg')}}" class="respimg" alt="">
+                        <img data-original="{{url('public/img/all/banner.jpg')}}" class="respimg lazyload" alt="">
                     </div>
                     <div class="clearfix"></div>
                     @include('front.top-stories')
@@ -94,7 +94,7 @@
                                     <div class="list-post-media">
                                         <a href="{{url('view/'.@$bestCategories[0]['blog_best_single_view']['slug'])}}">
                                             <div class="bg-wrap">
-                                                <div class="bg" data-bg="{{url('storage/app/'.$bestCategories[0]['image'])}}"></div>
+                                                <div class="lazyload" data-bg="{{url('storage/app/'.$bestCategories[0]['image'])}}"></div>
                                             </div>
                                         </a>
                                     </div>
@@ -110,8 +110,9 @@
                                         </ul>
                                         <div class="author-link">
                                             <a href="{{url('author-single')}}">
-                                                <img src="{{url('public/img/avatar/1.jpg')}}" alt="">
-                                                <span>By {{@$bestCategories[0]['blog_best_single_view']['author']['name']}}</span>
+                                                <img data-original="{{url('public/img/avatar/1.jpg')}}" class="lazyload">
+													<span>By {{@$bestCategories[0]['blog_best_single_view']['author']['name']}}
+													</span>
                                             </a>
                                         </div>
                                     </div>
@@ -137,7 +138,7 @@
                                                 <div class="list-post-media">
                                                     <a href="{{url('view/'.@$data['blog_best_single_view']['slug'])}}">
                                                         <div class="bg-wrap">
-                                                            <div class="bg" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
+                                                            <div class="bg lazyload" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -158,7 +159,7 @@
                                                     </ul>
                                                     <div class="author-link">
                                                         <a href="{{url('author-single')}}">
-                                                            <img src="{{url('public/img/avatar/1.jpg')}}" alt="">
+                                                            <img data-original="{{url('public/img/avatar/1.jpg')}}" class="lazyload">
                                                             <span>By {{@$data['blog_best_single_view']['author']['name']}}</span>
                                                         </a></div>
                                                 </div>
@@ -184,7 +185,7 @@
       <!-- section  -->
       <div class="gray-bg ad-wrap fl-wrap">
             <div class="content-banner-wrap">
-                  <img src="{{url('public/img/all/banner.jpg')}}" class="respimg" alt="">
+                  <img data-original="{{url('public/img/all/banner.jpg')}}" class="respimg lazyload" alt="">
             </div>
       </div>
       <!-- section end -->

@@ -6,7 +6,7 @@
                 <div class="swiper-wrapper">
                 <!-- swiper-slide-->
                 <div class="swiper-slide">
-                        <div class="grid-post-item     fl-wrap">
+                        <div class="grid-post-item fl-wrap">
                             <div class="grid-post-media gpm_sing">
                             <div class="bg-wrap">
                                     <div class="bg" data-bg="{{url('public/img/all/21.jpg')}}"></div>

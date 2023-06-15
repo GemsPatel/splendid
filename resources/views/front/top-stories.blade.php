@@ -14,7 +14,7 @@
                             <div class="list-post-media">
                                 <a href="{{url('view/'.$data['slug'])}}">
                                     <div class="bg-wrap">
-                                        <div class="bg" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
+                                        <div class="bg lazyload" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
                                     </div>
                                 </a>
                                 {{-- <span class="post-media_title">&copy; Image Copyrights Title</span> --}}
@@ -41,10 +41,10 @@
                         <div class="swiper-slide">
                             <div class="grid-post-item  bold_gpi  fl-wrap">
                                 <div class="grid-post-media gpm_sing">
-                                    <div class="bg" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
+                                    <div class="bg lazyload" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
                                     <div class="author-link">
                                         <a href="{{url('author-single')}}">
-                                            <img src="{{url('public/img/avatar/2.jpg')}}" alt="">
+                                            <img data-original="{{url('public/img/avatar/2.jpg')}}" class="lazyload">
                                             <span>By {{$data['author']['name']}}</span>
                                         </a>
                                     </div>
@@ -82,7 +82,7 @@
                                 <div class="list-post-media">
                                     <a href="{{url('view/'.$data['slug'])}}">
                                         <div class="bg-wrap">
-                                            <div class="bg" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
+                                            <div class="bg lazyload" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
                                         </div>
                                     </a>
                                     {{-- <span class="post-media_title">&copy; Image Copyrights Title</span> --}}

@@ -16,7 +16,7 @@
           <div class="box-widget-content">
               <div class="banner-widget fl-wrap">
                   <div class="bg-wrap bg-parallax-wrap-gradien">
-                      <div class="bg" data-bg="{{url('public/img/bg/7.jpg')}}"></div>
+                      <div class="bg lazyload" data-bg="{{url('public/img/bg/7.jpg')}}"></div>
                   </div>
                   <div class="banner-widget_content">
                       <h5>Visit our awesome merch and souvenir.</h5>

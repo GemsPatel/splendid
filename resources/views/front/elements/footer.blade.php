@@ -8,9 +8,11 @@
                   <div class="col-md-5">
                       <div class="footer-widget">
                           <div class="footer-widget-content">
-                              <a href="{{url('/')}}" class="footer-logo"><img src="{{url('public/img/logo2.png')}}" alt=""></a>
+                              <a href="{{url('/')}}" class="footer-logo">
+								<img data-original="{{url('public/img/logo2.png')}}" alt="">
+							</a>
                               <p class="mt-1">
-                                Splendid is an adjective that defines something or someone in a large and striking fashion as wonderful, excellent, or remarkable. Splendid can also refer to someone who possesses remarkable traits such as grace, talent, or intelligence. Overall, the term superb implies awe and respect for something that shines out in an extraordinary and glorious way.
+                                Reading is an adjective that defines something or someone in a large and striking fashion as wonderful, excellent, or remarkable. Reading can also refer to someone who possesses remarkable traits such as grace, talent, or intelligence. Overall, the term superb implies awe and respect for something that shines out in an extraordinary and glorious way.
                               </p>
                           </div>
                       </div>
@@ -177,6 +179,13 @@
 <script src="{{url('public/js/jquery.min.js')}}"></script>
 <script src="{{url('public/js/plugins.js')}}"></script>
 <script src="{{url('public/js/scripts.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+
+<script type="text/javascript">
+	$(".lazyload").lazyload({
+	    effect : "fadeIn"
+	});
+</script>
 
 </body>
 </html>

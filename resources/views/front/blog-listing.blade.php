@@ -38,7 +38,7 @@
                                 <div class="list-post-media">
                                     <a href="{{url('view/'.$ar->slug)}}">
                                         <div class="bg-wrap">
-                                            <div class="bg" data-bg="{{url('storage/app/'.$ar->image)}}"></div>
+                                            <div class="bg lazyload" data-bg="{{url('storage/app/'.$ar->image)}}"></div>
                                         </div>
                                     </a>
                                 </div>
@@ -51,7 +51,12 @@
                                         <li><i class="far fa-comments-alt"></i> 6 </li>
                                         <li><i class="fal fa-eye"></i> {{$ar->view}} </li>
                                     </ul>
-                                    <div class="author-link"><a href="{{url('author-single')}}"><img src="{{url('public/img/avatar/1.jpg')}}" alt="">  <span>By {{$ar->author->name}}</span></a></div>
+                                    <div class="author-link">
+										<a href="{{url('author-single')}}">
+											<img data-original="{{url('public/img/avatar/1.jpg')}}" class="lazyload">  
+											<span>By {{$ar->author->name}}</span>
+										</a>
+									</div>
                                 </div>
                             </div>
                         @empty
@@ -86,7 +91,7 @@
 <!-- section  -->
 <div class="gray-bg ad-wrap fl-wrap">
     <div class="content-banner-wrap">
-        <img src="{{url('public/img/all/banner.jpg')}}" class="respimg" alt="">
+        <img data-original="{{url('public/img/all/banner.jpg')}}" class="respimg lazyload" alt="">
     </div>
 </div>
 <!-- section end -->

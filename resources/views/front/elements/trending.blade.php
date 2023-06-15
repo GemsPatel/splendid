@@ -18,7 +18,12 @@
                       <div class="grid-post-item  bold_gpi  fl-wrap">
                       <div class="grid-post-media gpm_sing">
                             <div class="bg" data-bg="{{url('public/img/all/50.jpg')}}"></div>
-                            <div class="author-link"><a href="{{url('author-single')}}"><img src="{{url('public/img/avatar/2.jpg')}}" alt="">  <span>By Mark Rose</span></a></div>
+                            <div class="author-link">
+								<a href="{{url('author-single')}}">
+									<img data-original="{{url('public/img/avatar/2.jpg')}}" class="lazyload">  
+									<span>By Mark Rose</span>
+								</a>
+							</div>
                             <div class="grid-post-media_title">
                                   <a class="post-category-marker" href="{{url('category')}}">Business</a>
                                   <h4><a href="{{url('post-single')}}">Envatocoin Vulnerable To Retest 20K Support</a></h4>
@@ -37,7 +42,12 @@
                       <div class="grid-post-item  bold_gpi  fl-wrap">
                       <div class="grid-post-media gpm_sing">
                             <div class="bg" data-bg="{{url('public/img/all/53.jpg')}}"></div>
-                            <div class="author-link"><a href="{{url('author-single')}}"><img src="{{url('public/img/avatar/3.jpg')}}" alt="">  <span>By Ann Kowalsky</span></a></div>
+                            <div class="author-link">
+								<a href="{{url('author-single')}}">
+									<img data-original="{{url('public/img/avatar/3.jpg')}}" class="lazyload">  
+									<span>By Ann Kowalsky</span>
+								</a>
+							</div>
                             <div class="grid-post-media_title">
                                   <a class="post-category-marker" href="{{url('category')}}">Technology</a>
                                   <h4><a href="{{url('post-single')}}">Videos show SpaceX's Dragon capsule as it returns to Earth</a></h4>
@@ -56,7 +66,12 @@
                       <div class="grid-post-item  bold_gpi  fl-wrap">
                       <div class="grid-post-media gpm_sing">
                             <div class="bg" data-bg="{{url('public/img/all/54.jpg')}}"></div>
-                            <div class="author-link"><a href="{{url('author-single')}}"><img src="{{url('public/img/avatar/2.jpg')}}" alt="">  <span>By Mark Rose</span></a></div>
+                            <div class="author-link">
+								<a href="{{url('author-single')}}">
+									<img data-original="{{url('public/img/avatar/2.jpg')}}" class="lazyload">  
+									<span>By Mark Rose</span>
+								</a>
+							</div>
                             <div class="grid-post-media_title">
                                   <a class="post-category-marker" href="{{url('category')}}">Sports</a>
                                   <h4><a href="{{url('post-single')}}">Sports season ends with more surprises</a></h4>
@@ -75,7 +90,12 @@
                       <div class="grid-post-item  bold_gpi  fl-wrap">
                       <div class="grid-post-media gpm_sing">
                             <div class="bg" data-bg="{{url('public/img/all/52.jpg')}}"></div>
-                            <div class="author-link"><a href="{{url('author-single')}}"><img src="{{url('public/img/avatar/1.jpg')}}" alt="">  <span>By Jane Taylor</span></a></div>
+                            <div class="author-link">
+								<a href="{{url('author-single')}}">
+									<img data-original="{{url('public/img/avatar/1.jpg')}}" class="lazyload">  
+									<span>By Jane Taylor</span>
+								</a>
+							</div>
                             <div class="grid-post-media_title">
                                   <a class="post-category-marker" href="{{url('category')}}">Science</a>
                                   <h4><a href="{{url('post-single')}}">World electric ready to race tomorrow</a></h4>
