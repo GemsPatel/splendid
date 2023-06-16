@@ -44,7 +44,14 @@
 		<meta name="twitter:label1" content="Est. reading time">
 		<meta name="twitter:data1" content="5 minutes">
 
-
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y7LZMV3DD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0Y7LZMV3DD');
+        </script>
     </head>
     <body>
         <!-- main start  -->
