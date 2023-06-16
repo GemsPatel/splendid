@@ -16,6 +16,9 @@
     	<meta name="copyright" content="Copyright (c) {{ date('Y') }}" />
     	<meta name="generator" content="{{ getField( 'configurations', 'config_key', 'config_value', 'SEO_GENERATOR' ) }}" />
     	<meta http-equiv="vary" content="User-Agent">
+		
+		<meta name="monetag" content="13cd1d52a6cd233c356627d8da1f1443">
+		
         <link rel="canonical" href="{{ url('/') }}">
 
         <!--=============== CSS ===============-->

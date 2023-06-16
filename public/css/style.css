@@ -47,7 +47,7 @@ body{
 /*--------------Typography--------------------------------------*/
 p {
 	text-align:left;
-	font-size:11px;
+	font-size:15px;
 	line-height:24px;
 	padding-bottom:10px;
 	font-weight: 500;
@@ -1229,6 +1229,7 @@ section {
 .hs_single-post .post-category-marker {
 	float: left;
 	margin-bottom: 14px;
+	font-size: 13px;
 }
 .hs_single-post  .author-link a , .hs_single-post .post-opt {
 	color: #fff;
@@ -1291,12 +1292,12 @@ section {
 .breadcrumbs-header_url a  {
 	color: #000;
 	font-weight: 600;
-	font-size: 11px;
+	font-size: 13px;
 }
 .breadcrumbs-header_url span{
 	color: #666;
 	font-weight: 600;
-	font-size: 11px;
+	font-size: 13px;
 	position: relative;
 }
 .breadcrumbs-list a , .breadcrumbs-header_url a , .breadcrumbs-list span , .breadcrumbs-header_url span   {
@@ -2446,7 +2447,7 @@ section {
 	border-left: 1px solid #eee;
 }
 .list-post-content h3 {
-	font-size: 18px;
+	font-size: 19px;
 	font-weight: 600;
 	text-align: left;
 	display: block;
@@ -2474,8 +2475,8 @@ section {
 	z-index: 20;
 }
 .list-post-content .post-category-marker , .grid-post-media_title .post-category-marker {
-	padding: 4px 13px;
-	font-size: 10px;
+	padding: 5px 10px;
+	font-size: 13px;
 }
 .list-post-content .post-category-marker:hover {
 	background: #222;
@@ -3575,10 +3576,10 @@ section {
 	background: #222;
 	box-sizing: border-box;
 	display: block;
-	padding: 15px 0;
+	padding: 12px 0;
 	color: #fff;
 	font-weight: 600;
-	font-size: 10px;
+	font-size: 13px;
 	text-transform: uppercase;
 }
 .tabs-widget .tabs-menu li.current a {
