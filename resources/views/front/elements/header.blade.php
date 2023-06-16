@@ -8,7 +8,6 @@
         ?>
         <title>{{ $custom_page_title ?? $headerInfo->custom_page_title }}</title>
     	<base href="{{ url('/') }}" />
-    	<link rel="shortcut icon" href="{{ url('public/img/favicon.ico') }}">
     	<meta name="description" content="{{ $meta_description ?? $headerInfo->meta_description }}" />
     	<meta name="keywords" content="{{ $meta_keyword ?? $headerInfo->meta_keyword }}" />
     	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -16,19 +15,36 @@
     	<meta name="copyright" content="Copyright (c) {{ date('Y') }}" />
     	<meta name="generator" content="{{ getField( 'configurations', 'config_key', 'config_value', 'SEO_GENERATOR' ) }}" />
     	<meta http-equiv="vary" content="User-Agent">
-		
+
 		<meta name="monetag" content="13cd1d52a6cd233c356627d8da1f1443">
-		
+
         <link rel="canonical" href="{{ url('/') }}">
 
         <!--=============== CSS ===============-->
         <link type="text/css" rel="stylesheet" href="{{url('public/css/plugins.css')}}">
         <link type="text/css" rel="stylesheet" href="{{url('public/css/style.css?v=0.1')}}">
         <link type="text/css" rel="stylesheet" href="{{url('public/css/color.css')}}">
-		
+
         <!--=============== favicons ===============-->
-        <link rel="shortcut icon" href="{{url('public/public/img/favicon.ico?v=0.1')}}">
-		
+        <link rel="shortcut icon" href="{{url('public/img/favicon.ico?v=0.1.1')}}">
+
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="{{ $custom_page_title ?? $headerInfo->custom_page_title }}">
+		<meta property="og:description" content="{{ $meta_description ?? $headerInfo->meta_description }}">
+		<meta property="og:url" content="{{ url('/') }}">
+		<meta property="og:site_name" content="TimesOfReading">
+		<meta property="og:image" content="{{ $meta_image ?? url('public/img/logo.png') }}">
+
+		<meta property="article:publisher" content="https://www.facebook.com/timesofreading">
+		<meta property="article:modified_time" content="{{date( 'Y-m-d h:i:s' )}}">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@timesofreading">
+		<meta name="twitter:label1" content="Est. reading time">
+		<meta name="twitter:data1" content="5 minutes">
+
+
     </head>
     <body>
         <!-- main start  -->

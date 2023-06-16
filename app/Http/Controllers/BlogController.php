@@ -67,6 +67,7 @@ class BlogController extends Controller
         $custom_page_title = $category->title;
         $meta_description = $category->title;
         $meta_keyword = $category->slug;
+        // $meta_image = $category->slug;
 
         return view('front.blog-listing', compact('blogArr', 'recentArr', 'slug', 'action', 'request', 'custom_page_title', 'meta_description', 'meta_keyword' ));
     }
@@ -99,8 +100,9 @@ class BlogController extends Controller
         $custom_page_title = $data->title;
         $meta_description = $data->short_description;
         $meta_keyword = $data->short_description;
+        $meta_image = $data->image;
 
-        return view('front.blog-details', compact( 'data', 'categories', 'recentArr', 'prevBlog', 'nextBlog', 'custom_page_title', 'meta_description', 'meta_keyword' ) );
+        return view('front.blog-details', compact( 'data', 'categories', 'recentArr', 'prevBlog', 'nextBlog', 'custom_page_title', 'meta_description', 'meta_keyword', 'meta_image' ) );
     }
 
     /**

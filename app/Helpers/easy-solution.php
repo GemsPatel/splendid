@@ -155,6 +155,6 @@ function getAdminSideMenuPerimission(){
 /**
  *
  */
-function getHeaderInformation(){
-    return SiteConfig::where( 'id', 1 )->first();
+function getHeaderInformation( $id = 1 ){
+    return SiteConfig::where( 'id', $id )->first();
 }
