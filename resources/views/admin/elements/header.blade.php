@@ -5,9 +5,9 @@
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-            <meta name="description" content="Splendid">
+            <meta name="description" content="Times Of Rreading">
             <meta name="author" content="ShreeGurave">
-            <meta name="keyword" content="Splendid">
+            <meta name="keyword" content="Times Of Rreading">
 
             <!--=============== favicons ===============-->
             <link rel="shortcut icon" href="{{url('public/public/img/favicon.ico?v=0.1')}}">
@@ -15,7 +15,7 @@
             <!-- CSRF Token -->
             <meta name="csrf-token" content="{{ csrf_token() }}">
 
-            <title>{{ config('app.name', 'Splendid') }}</title>
+            <title>{{ config('app.name', 'Times Of Rreading') }}</title>
 
             <!-- Google Font: Source Sans Pro -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -69,7 +69,7 @@
 
             <!-- Preloader -->
             <div class="preloader flex-column justify-content-center align-items-center">
-                  <img class="animation__shake" src="{{url('public/logo/s-logo.png')}}" alt="Splendid" height="60" width="60">
+                  <img class="animation__shake" src="{{url('public/logo/s-logo.png')}}" alt="Times Of Rreading" height="60" width="60">
             </div>
 
             <!-- Navbar -->

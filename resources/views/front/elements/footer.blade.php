@@ -41,6 +41,7 @@
 	    effect : "fadeIn"
 	});
 </script>
+
 </body>
 </html>
 <!-- https://publishers.monetag.com/earnings -->

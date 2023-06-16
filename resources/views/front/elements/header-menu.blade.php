@@ -9,7 +9,7 @@
                   <span class="date_year"></span>
               </div>
               <div class="header_news-ticker-wrap">
-                  <div class="hnt_title">Hot Splendid :</div>
+                  <div class="hnt_title">Hot Reading :</div>
                   <div class="header_news-ticker fl-wrap">
                       <ul>
                             @foreach ( getHostStories() as $data )
@@ -25,11 +25,11 @@
                   </div>
               </div>
               <ul class="topbar-social">
-                  <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                  <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                  <li><a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
+                  <li class="hide"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                  <li class="hide"><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                  <li class="hide"><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                  <li class="hide"><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                  <li class="hide"><a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
               </ul>
           </div>
       </div>

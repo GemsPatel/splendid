@@ -6,7 +6,7 @@ $menuArr = getAdminSideMenuPerimission();
   <!-- Brand Logo -->
   <a href="{{url('/admin')}}" class="brand-link">
     <img src="{{url('public/logo/s-logo.png')}}" alt="Splendit" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">Splendid</span>
+    <span class="brand-text font-weight-light">Times Of Rreading</span>
   </a>
 
   <!-- Sidebar -->
