@@ -98,6 +98,7 @@ class BlogsController extends Controller
         $blog->image = $path;
         $blog->short_description = $request->short_description;
         $blog->description = $request->description;
+		$blog->keyword = $request->keyword;
         $blog->status = $request->status;
         $blog->save();
 
@@ -202,6 +203,7 @@ class BlogsController extends Controller
         $blog->slug = convertStringToSlug( $request->title );
         $blog->short_description = $request->short_description;
         $blog->description = $request->description;
+		$blog->keyword = $request->keyword;
         $blog->status = $request->status;
         $blog->save();
 

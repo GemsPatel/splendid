@@ -102,7 +102,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="title">Short Description, Meta Description</label>
-                                            <textarea type="text" class="form-control" id="short_description" name="short_description" placeholder="{{ __('Short Description, Meta Description here') }}" rows="4"> {{old('short_description')}}</textarea>
+                                            <textarea type="text" class="form-control" id="short_description" name="short_description" placeholder="{{ __('Short Description, Meta Description here') }}" rows="4">{{old('short_description')}}</textarea>
                                             @if($errors->has('short_description'))
                                                 <div class="error">{{ $errors->first('short_description') }}</div>
                                             @endif
@@ -166,6 +166,16 @@
                                             <textarea type="text" class="ckeditor form-control" id="description" name="description" placeholder="{{ __('Blog Description') }}" rows="16"> {{old('description')}}</textarea>
                                             @if($errors->has('description'))
                                                     <div class="error">{{ $errors->first('description') }}</div>
+                                            @endif
+                                        </div>
+                                    </div>
+									
+									<div class="card-body">
+                                        <div class="form-group">
+                                            <label for="title">Keyword</label>
+                                            <textarea type="text" class="form-control" id="keyword" name="keyword" placeholder="{{ __('Blog keyword') }}" rows="16">{{old('keyword')}}</textarea>
+                                            @if($errors->has('keyword'))
+												<div class="error">{{ $errors->first('keyword') }}</div>
                                             @endif
                                         </div>
                                     </div>

@@ -70,8 +70,8 @@
                                                                     <div class="pr-2">
                                                                         <a href="{{ route('admin.blogs.edit', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center"><i class="fas fa-pencil-alt fa-sm" aria-hidden="true"></i></a>
                                                                     </div>
-                                                                    <div class="pr-2 d-none">
-                                                                        <a href="{{url( 'view/'.$ar->slug )}}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" target="_blank"><i class="fas fa-eye fa-sm" aria-hidden="true"></i></a>
+                                                                    <div class="pr-2">
+                                                                        <a href="{{url( 'view/'.$ar->slug )}}" class="btn btn-success btn-size p-0 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" target="_blank"><i class="fas fa-eye fa-sm" aria-hidden="true"></i></a>
                                                                     </div>
                                                                     <div class="pr-2">
                                                                         {{-- <form action="{{ route('admin.blogs.delete', [$ar->id] ) }}" method="POST">
