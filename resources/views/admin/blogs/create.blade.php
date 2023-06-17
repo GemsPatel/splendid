@@ -168,12 +168,10 @@
                                                     <div class="error">{{ $errors->first('description') }}</div>
                                             @endif
                                         </div>
-                                    </div>
-									
-									<div class="card-body">
+                                    
                                         <div class="form-group">
                                             <label for="title">Keyword</label>
-                                            <textarea type="text" class="form-control" id="keyword" name="keyword" placeholder="{{ __('Blog keyword') }}" rows="16">{{old('keyword')}}</textarea>
+                                            <textarea type="text" class="form-control" id="keyword" name="keyword" placeholder="{{ __('Blog keyword') }}" rows="5">{{old('keyword')}}</textarea>
                                             @if($errors->has('keyword'))
 												<div class="error">{{ $errors->first('keyword') }}</div>
                                             @endif
