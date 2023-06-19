@@ -81,15 +81,18 @@ class BlogsController extends Controller
             // 'description' => 'required',
         ]);
 
+		$blog = new Blogs();
+
         $path = "";
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('public/blog');
+            $filename = $request->image->getClientOriginalName();
+            $request->image->storeAs('blog', $filename, 'public' );
+			$path = "public/blog/".$filename;
         }
 
         $slug = rtrim( convertStringToSlug( $request->title ), "-" );
 
         $user_id = auth()->guard('admin')->user()->id;
-        $blog = new Blogs();
         $blog->user_id = $user_id;
         $blog->category_id = $request->category_id;
         $blog->sub_category_id = $request->sub_category_id;
@@ -101,7 +104,7 @@ class BlogsController extends Controller
 		$blog->keyword = $request->keyword;
         $blog->status = $request->status;
         $blog->save();
-
+		
         //save blog tags
         if( isset( $request->tags ) && COUNT( $request->tags ) > 0 ){
             foreach( $request->tags as $tag ){
@@ -193,7 +196,9 @@ class BlogsController extends Controller
 
         $blog = Blogs::find($id);
         if ($request->hasFile('image')) {
-            $blog->image = $request->file('image')->store('public/blog');
+			$filename = $request->image->getClientOriginalName();
+            $request->image->storeAs('blog', $filename, 'public' );
+			$blog->image = "public/blog/".$filename;
         }
 
         $blog->user_id = auth()->guard('admin')->user()->id;
