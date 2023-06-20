@@ -74,7 +74,7 @@ class BlogsController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|min:1|max:64',
+            'title' => 'required|min:1|max:256',
             'category_id' => 'required',
             // 'sub_category_id' => 'required',
             'short_description' => 'required',
@@ -187,7 +187,7 @@ class BlogsController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'title' => 'required|min:1|max:64',
+            'title' => 'required|min:1|max:256',
             'category_id' => 'required',
             // 'sub_category_id' => 'required',
             'short_description' => 'required',
