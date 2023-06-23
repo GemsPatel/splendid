@@ -48,6 +48,7 @@
                                                         <th class="text-center">Blog</th>
                                                         <th class="text-center">Category</th>
                                                         <th class="text-center">Status</th>
+														<th class="text-center">Views</th>
                                                         <th class="text-center">Updated At</th>
                                                         <th class="text-center">Action</th>
                                                       </tr>
@@ -66,6 +67,7 @@
                                                                     @endif
                                                                 </td>
                                                                 <td class="text-center">{{ formatDate( "d-m-Y h:i", $ar->updated_at ) }}</td>
+																<td class="text-center">{{ $ar->view }}</td>
                                                                 <td class="d-flex text-center">
                                                                     <div class="pr-2">
                                                                         <a href="{{ route('admin.blogs.edit', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center"><i class="fas fa-pencil-alt fa-sm" aria-hidden="true"></i></a>
@@ -84,7 +86,7 @@
                                                             </tr>
                                                       @empty
                                                             <tr class="text-center">
-                                                                  <td colspan="6">There is no role available.</td>
+                                                                  <td colspan="7">There is no role available.</td>
                                                             </tr>
                                                       @endforelse
                                                 </tbody>

@@ -65,24 +65,18 @@
                                     </div>
                               </div>
                               <!-- /.card -->
-                              <div class="col-md-6 d-none">
+                              <div class="col-md-6 {{ ( $dataArr->config_key == "FRONT_THEME" ) ? '' : 'd-none' }}">
                                     <!-- general form elements -->
                                     <div class="card card-primary">
                                           <div class="card-header">
-                                                <h3 class="card-title">Image</h3>
+                                                <h3 class="card-title">Point:</h3>
                                           </div>
                                           <!-- /.card-header -->
 
                                           <div class="card-body">
                                                 <div class="form-group">
-                                                      <div class="image text-center" style="padding:5px;">
-                                                            <img src="{{ ( $dataArr->image != "" ) ? url( "storage/".$dataArr->image ) :  url('public/img/no-image.png')}}" width="180" height="180" id="catPrevImage_00"  class="image" style="margin-bottom:0px;padding:3px;" /><br />
-                                                            <input type="file" name="image" id="catImg_00" onchange="readURL(this,'00');" style="display: none;">
-                                                            <input type="hidden" value="<?php echo (@$image) ? $image : @$_POST['image'];?>" name="image" id="hiddenCatImg" />
-                                                            <div class="text-center">
-                                                                  <small><a onclick="$('#catImg_00').trigger('click');">Browse</a>&nbsp;|&nbsp;<a style="clear:both;" onclick="javascript:clear_image('catPrevImage_00')"; >Clear</a></small>
-                                                            </div>
-                                                      </div>
+                                                      <p><b>SPLENDID</b>: Splendid</p>
+													  <p><b>TIMES_OF_READING</b>: Times of Reading</p>
                                                 </div>
                                           </div>
                                     </div>
