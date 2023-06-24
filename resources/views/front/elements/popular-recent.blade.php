@@ -20,9 +20,9 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                             <!-- post-widget-item -->
                             <div class="post-widget-item fl-wrap">
                                 <div class="post-widget-item-media">
-                                    <a href="{{url('post-single')}}">
+                                    {{-- <a href="{{url('post-single')}}">
 										<img src="{{url('public/img/all/thumbs/1.jpg')}}"  class="">
-									</a>
+									</a> --}}
                                 </div>
                                 <div class="post-widget-item-content">
                                     <h4><a href="{{url('post-single')}}">How to start Home education.</a></h4>
@@ -47,7 +47,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                 <div class="post-widget-item fl-wrap">
                                     <div class="post-widget-item-media">
                                         <a href="{{url('view/'.$data->slug)}}">
-                                            <img class="" src="{{url('storage/app/'.$data->image)}}" alt="{{$data->title}}" onerror="this.src='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';">
+                                            <img class="" src="{{url('storage/app/'.$data->image)}}" alt="{{$data->title}}" onerror="this.src='{{url(\'public/img/'.$getThemeName.'.png')}}';this.onerror='';">
                                         </a>
                                     </div>
                                     <div class="post-widget-item-content">

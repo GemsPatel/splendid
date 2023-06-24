@@ -20,7 +20,7 @@
                             <div class="bg" data-bg="{{url('public/img/all/50.jpg')}}"></div>
                             <div class="author-link">
 								<a href="{{url('author-single')}}">
-									<img data-original="{{url('public/img/avatar/2.jpg')}}" class="lazyload">
+									<img data-original="{{url('public/img/avatar/2.jpg')}}" class="">
 									<span>By Mark Rose</span>
 								</a>
 							</div>
@@ -44,7 +44,7 @@
                             <div class="bg" data-bg="{{url('public/img/all/53.jpg')}}"></div>
                             <div class="author-link">
 								<a href="{{url('author-single')}}">
-									 data-original="{{url('public/img/avatar/3.jpg')}}" class="lazyload">
+									 data-original="{{url('public/img/avatar/3.jpg')}}" class="">
 									<span>By Ann Kowalsky</span>
 								</a>
 							</div>
@@ -68,7 +68,7 @@
                             <div class="bg" data-bg="{{url('public/img/all/54.jpg')}}"></div>
                             <div class="author-link">
 								<a href="{{url('author-single')}}">
-									<img data-original="{{url('public/img/avatar/2.jpg')}}" class="lazyload">
+									<img data-original="{{url('public/img/avatar/2.jpg')}}" class="">
 									<span>By Mark Rose</span>
 								</a>
 							</div>
@@ -92,7 +92,7 @@
                             <div class="bg" data-bg="{{url('public/img/all/52.jpg')}}"></div>
                             <div class="author-link">
 								<a href="{{url('author-single')}}">
-									<img data-original="{{url('public/img/avatar/1.jpg')}}" class="lazyload">
+									<img data-original="{{url('public/img/avatar/1.jpg')}}" class="">
 									<span>By Jane Taylor</span>
 								</a>
 							</div>

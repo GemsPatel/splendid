@@ -41,7 +41,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                 <div class="list-post-media">
                                     <a href="{{url('view/'.$ar->slug)}}">
                                         <div class="bg-wrap">
-                                            <div class="bg" data-bg="{{url('storage/app/'.$ar->image)}}" onerror="this.data-bg='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';"></div>
+                                            <div class="bg" data-bg="{{url('storage/app/'.$ar->image)}}" onerror="this.data-bg='{{url(\'public/img/'.$getThemeName.'.png')}}';this.onerror='';"></div>
                                         </div>
                                     </a>
                                 </div>
@@ -56,7 +56,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                     </ul>
                                     <div class="author-link">
 										<a href="{{url('author-single')}}">
-											<img src="{{url('public/img/avatar/'.$ar->author->id.'.jpg')}}" class="" alt="{{$ar->author->name}}">
+											<img src="{{url('public/img/avatar/'.$ar->author->id.'.jpg')}}" onerror="this.src='{{url(\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" class="" alt="{{$ar->author->name}}">
 											<span>By {{$ar->author->name}}</span>
 										</a>
 									</div>

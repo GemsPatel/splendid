@@ -51,7 +51,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                     <div class="list-post-media">
                                         <a href="{{url('view/'.@$bestCategories[0]['blog_best_single_view']['slug'])}}">
                                             <div class="bg-wrap">
-                                                <div class="" data-bg="{{url('storage/app/'.$bestCategories[0]['image'])}}" onerror="this.data-bg='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';"></div>
+                                                <div class="" data-bg="{{url('storage/app/'.$bestCategories[0]['image'])}}" onerror="this.data-bg='{{url(\'public/img/'.$getThemeName.'.png')}}';this.onerror='';"></div>
                                             </div>
                                         </a>
                                     </div>
@@ -67,7 +67,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                         </ul>
                                         <div class="author-link">
                                             <a href="{{url('author-single')}}">
-                                                <img src="{{url('public/img/avatar/'.@$bestCategories[0]['blog_best_single_view']['author']['id'].'.jpg')}}" class="{{@$bestCategories[0]['blog_best_single_view']['author']['name']}}">
+                                                <img src="{{url('public/img/avatar/'.@$bestCategories[0]['blog_best_single_view']['author']['id'].'.jpg')}}" onerror="this.src='{{url(\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" alt="{{@$bestCategories[0]['blog_best_single_view']['author']['name']}}">
                                                 <span>By {{@$bestCategories[0]['blog_best_single_view']['author']['name']}}</span>
                                             </a>
                                         </div>
@@ -94,7 +94,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                                 <div class="list-post-media">
                                                     <a href="{{url('view/'.@$data['blog_best_single_view']['slug'])}}">
                                                         <div class="bg-wrap">
-                                                            <div class="bg" data-bg="{{url('storage/app/'.$data['image'])}}" onerror="this.data-bg='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';"></div>
+                                                            <div class="bg" data-bg="{{url('storage/app/'.$data['image'])}}" onerror="this.data-bg='{{url(\'public/img/'.$getThemeName.'.png')}}';this.onerror='';"></div>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -115,7 +115,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                                     </ul>
                                                     <div class="author-link">
                                                         <a href="{{url('author-single')}}">
-                                                            <img src="{{url('public/img/avatar/'.@$data['blog_best_single_view']['author']['id'].'.jpg')}}" class="{{@$data['blog_best_single_view']['author']['name']}}">
+                                                            <img src="{{url('public/img/avatar/'.@$data['blog_best_single_view']['author']['id'].'.jpg')}}" onerror="this.src='{{url(\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" alt="{{@$data['blog_best_single_view']['author']['name']}}">
                                                             <span>By {{@$data['blog_best_single_view']['author']['name']}}</span>
                                                         </a></div>
                                                 </div>
