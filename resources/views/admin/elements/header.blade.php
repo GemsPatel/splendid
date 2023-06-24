@@ -68,8 +68,11 @@
             <div class="wrapper">
 
             <!-- Preloader -->
+            <?php
+            $getThemeName = getConfigurationfield("FRONT_THEME");
+            ?>
             <div class="preloader flex-column justify-content-center align-items-center">
-                  <img class="animation__shake" src="{{url('public/logo/s-logo.png')}}" alt="Times Of Rreading" height="60" width="60">
+                  <img class="animation__shake" src="{{url('public/img/'.$getThemeName.'-favicon.ico')}}" alt="{{pgTitle( $getThemeName )}}" height="60" width="60">
             </div>
 
             <!-- Navbar -->

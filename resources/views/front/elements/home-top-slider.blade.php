@@ -20,7 +20,7 @@
                                 <div class="clearfix"></div>
                                 <div class="author-link">
                                     <a href="{{url('author-single')}}">
-                                        <img class="b-lazy" src="{{url('public/img/avatar/4.jpg')}}" alt="">
+                                        <img class="" src="{{url('public/img/avatar/'.$slider->author->id.'.jpg')}}" alt="{{$slider->author->name}}">
                                         <span>By {{$slider->author->name}}</span>
                                     </a>
                                 </div>
@@ -62,11 +62,11 @@
                     </div>
                 </div>
             </div>
-            <div class="multi-pag"></div>
+            <!-- <div class="multi-pag"></div> -->
         </div>
     </div>
     <!-- hero-slider_controls-wrap end  -->
-    <div class="slider-progress-bar act-slider">
+    <div class="slider-progress-bar act-slider hide">
         <span>
             <svg class="circ" width="30" height="30">
                 <circle class="circ2" cx="15" cy="15" r="13" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none" />

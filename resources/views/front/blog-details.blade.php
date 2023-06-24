@@ -2,7 +2,7 @@
 <!--section   -->
 <section class="hero-section">
     <div class="bg-wrap hero-section_bg">
-        <div class="bg lazyload" data-bg="{{url('storage/app/'.$data->image)}}"></div>
+        <div class="bg" data-bg="{{url('storage/app/'.$data->image)}}"></div>
     </div>
     <div class="container">
         <div class="hero-section_title hs_single-post">
@@ -13,12 +13,12 @@
             <h5>{{$data->short_description}}</h5>
             <div class="author-link">
                 <a href="{{url('author-single')}}">
-                    <img src="{{url('public/img/avatar/2.jpg')}}" class="lazyload">
+                    <img src="{{url('public/img/avatar/'.$data->author->id.'.jpg')}}" class="" alt="{{$data->author->name}}">
                     <span>By {{$data->author->name}}</span>
                 </a>
             </div>
             <ul class="post-opt">
-                <li><i class="far fa-comments-alt"></i> 4 </li>
+                <li class="hide"><i class="far fa-comments-alt"></i> 4 </li>
                 <li><i class="fal fa-eye"></i>{{$data->view}}</li>
             </ul>
         </div>
@@ -96,7 +96,7 @@
                                     @if( isset( $prevBlog[0] ) )
                                         <a href="{{url('view/'.$prevBlog[0]['slug'])}}" class="single-post-nav_prev spn_box w-100">
                                             <div class="spn_box_img">
-                                                <img data-original="{{url('storage/app/'.$prevBlog[0]['image'])}}" class="respimg lazyload" alt="">
+                                                <img src="{{url('storage/app/'.$prevBlog[0]['image'])}}" class="respimg" alt="{{$prevBlog[0]['title']}}">
                                             </div>
                                             <div class="spn-box-content">
                                                 <span class="spn-box-content_subtitle"><i class="fas fa-caret-left"></i> Prev Post</span>
@@ -109,7 +109,7 @@
                                     @if( isset( $nextBlog[0] ) )
                                         <a href="{{url('view/'.$nextBlog[0]['slug'])}}" class="single-post-nav_next spn_box w-100">
                                             <div class="spn_box_img">
-                                                <img data-original="{{url('storage/app/'.$nextBlog[0]['image'])}}" class="respimg lazyload" alt="">
+                                                <img src="{{url('storage/app/'.$nextBlog[0]['image'])}}" class="respimg " alt="{{$nextBlog[0]['title']}}">
                                             </div>
                                             <div class="spn-box-content">
                                                 <span class="spn-box-content_subtitle">Next Post <i class="fas fa-caret-right"></i></span>
@@ -124,32 +124,8 @@
                     </div>
                     <!-- single-post-content  end   -->
                     <div class="limit-box2 fl-wrap"></div>
-                    <!-- post-author-->
-                    <div class="post-author fl-wrap hide">
-                        <div class="author-img">
-                            <img data-original="{{url('public/img/avatar/2.jpg')}}" class="lazyload">
-                        </div>
-                        <div class="author-content fl-wrap">
-                            <h5>Written By <a href="{{url('author-single')}}">Mark Rose</a></h5>
-                            <p>At one extremity the rope was unstranded, and the separate spread yarns were all braided and woven round the socket of the harpoon; the pole was then driven hard up into the socket..</p>
-                        </div>
-                        <div class="profile-card-footer fl-wrap">
-                            <a href="{{url('author-single')}}" class="post-author_link">View Profile <i class="fas fa-caret-right"></i></a>
-                            <div class="profile-card-footer_soc">
-                                <div class="profile-card-footer_title">Follow: </div>
-                                <div class="profile-card-social">
-                                    <ul>
-                                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--post-author end-->
-                    <div class="more-post-wrap  fl-wrap">
+
+                    <div class="more-post-wrap fl-wrap hide">
                         <div class="pr-subtitle prs_big">Related Posts</div>
                         <div class="list-post-wrap list-post-wrap_column fl-wrap">
                             <div class="row">
@@ -160,7 +136,7 @@
                                         <div class="list-post-media">
                                             <a href="{{url('post-single')}}">
                                                 <div class="bg-wrap">
-                                                    <div class="bg lazyload" data-bg="{{url('public/img/all/16.jpg')}}"></div>
+                                                    <div class="bg " data-bg="{{url('public/img/all/16.jpg')}}"></div>
                                                 </div>
                                             </a>
                                             <span class="post-media_title">&copy; Image Copyrights Title</span>
@@ -179,7 +155,7 @@
                                         <div class="list-post-media">
                                             <a href="{{url('post-single')}}">
                                                 <div class="bg-wrap">
-                                                    <div class="bg lazyload" data-bg="{{url('public/img/all/24.jpg')}}"></div>
+                                                    <div class="bg " data-bg="{{url('public/img/all/24.jpg')}}"></div>
                                                 </div>
                                             </a>
                                             <span class="post-media_title">&copy; Image Copyrights Title</span>
@@ -225,7 +201,7 @@
                                         <div class="col-md-6">
                                             <a href="{{url('category/'.$data->slug)}}" class="sb-categories_bg_item">
                                                 <div class="bg-wrap">
-                                                    <div class="bg lazyload" data-bg="{{url('storage/app/'.$data->image)}}"></div>
+                                                    <div class="bg " data-bg="{{url('storage/app/'.$data->image)}}"></div>
                                                     <div class="overlay"></div>
                                                 </div>
                                                 <div class="spb-categories_title"><span>{{$k+1}}.</span>{{$data->title}}</div>
@@ -299,9 +275,9 @@
 </section>
 <!-- section end -->
 <!-- section  -->
-<div class="gray-bg ad-wrap fl-wrap">
+<div class="gray-bg ad-wrap fl-wrap hide">
     <div class="content-banner-wrap">
-        <img data-original="{{url('public/img/all/banner.jpg')}}" class="respimg lazyload" alt="">
+        <img src="{{url('public/img/all/banner.jpg')}}" class="respimg " alt="Advertisement">
     </div>
 </div>
 <!-- section end -->

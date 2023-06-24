@@ -1,3 +1,6 @@
+<?php
+$getThemeName = getConfigurationfield("FRONT_THEME");
+?>
 <!-- header -->
 <header class="main-header">
       <!-- top bar -->
@@ -38,7 +41,7 @@
           <div class="container">
                 <!-- logo holder  -->
                 <a href="{{url('/')}}" class="logo-holder">
-                    <img class="lazyload" data-original="{{url('public/img/logo.png')}}" alt="Times of Reading">
+                    <img class="" src="{{url('public/img/'.$getThemeName.'.png')}}" alt="{{pgTitle( $getThemeName )}}">
                 </a>
               <!-- logo holder end -->
               <div class="search_btn htact show_search-btn"><i class="far fa-search"></i> <span class="header-tooltip">Search</span></div>

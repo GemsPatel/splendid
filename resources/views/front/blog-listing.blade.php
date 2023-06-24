@@ -1,4 +1,7 @@
 @include('front.elements.header')
+<?php
+$getThemeName = getConfigurationfield("FRONT_THEME");
+?>
 <div class="breadcrumbs-header fl-wrap">
     <div class="container">
         <div class="breadcrumbs-header_url">
@@ -38,7 +41,7 @@
                                 <div class="list-post-media">
                                     <a href="{{url('view/'.$ar->slug)}}">
                                         <div class="bg-wrap">
-                                            <div class="bg lazyload" data-bg="{{url('storage/app/'.$ar->image)}}"></div>
+                                            <div class="bg" data-bg="{{url('storage/app/'.$ar->image)}}" onerror="this.data-bg='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';"></div>
                                         </div>
                                     </a>
                                 </div>
@@ -48,12 +51,12 @@
                                     <span class="post-date"><i class="far fa-clock"></i>{{formatDate( 'd M Y', $ar->created_at )}}</span>
                                     <p>{{$ar->short_description}} </p>
                                     <ul class="post-opt">
-                                        <li><i class="far fa-comments-alt"></i> 6 </li>
+                                        <li class="hide"><i class="far fa-comments-alt"></i> 6 </li>
                                         <li><i class="fal fa-eye"></i> {{$ar->view}} </li>
                                     </ul>
                                     <div class="author-link">
 										<a href="{{url('author-single')}}">
-											<img data-original="{{url('public/img/avatar/1.jpg')}}" class="lazyload">  
+											<img src="{{url('public/img/avatar/'.$ar->author->id.'.jpg')}}" class="" alt="{{$ar->author->name}}">
 											<span>By {{$ar->author->name}}</span>
 										</a>
 									</div>
@@ -73,7 +76,7 @@
                     <div class="clearfix"></div>
                     <!--pagination-->
                     <div class="pagination">
-                        {!! $blogArr->links() !!}
+                        {!! $blogArr->links('front.elements.custom-pagination') !!}
                     </div>
                     <!--pagination end-->
                 </div>
@@ -89,9 +92,9 @@
 </section>
 <!-- section end -->
 <!-- section  -->
-<div class="gray-bg ad-wrap fl-wrap">
+<div class="gray-bg ad-wrap fl-wrap hide">
     <div class="content-banner-wrap">
-        <img data-original="{{url('public/img/all/banner.jpg')}}" class="respimg lazyload" alt="">
+        <img src="{{url('public/img/all/banner.jpg')}}" class="respimg " alt="Advertisement">
     </div>
 </div>
 <!-- section end -->

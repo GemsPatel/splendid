@@ -44,7 +44,7 @@
                             <div class="bg" data-bg="{{url('public/img/all/53.jpg')}}"></div>
                             <div class="author-link">
 								<a href="{{url('author-single')}}">
-									<img data-original="{{url('public/img/avatar/3.jpg')}}" class="lazyload">
+									 data-original="{{url('public/img/avatar/3.jpg')}}" class="lazyload">
 									<span>By Ann Kowalsky</span>
 								</a>
 							</div>

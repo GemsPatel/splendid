@@ -1,12 +1,13 @@
 <?php
 $adminMenuArr = getAdminSideMenu();
 $menuArr = getAdminSideMenuPerimission();
+$getThemeName = getConfigurationfield("FRONT_THEME");
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="{{url('/admin')}}" class="brand-link">
-    <img src="{{url('public/logo/s-logo.png')}}" alt="Splendit" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">Times Of Rreading</span>
+    <img src="{{url('public/img/'.$getThemeName.'-favicon.ico')}}" alt="{{pgTitle( $getThemeName )}}" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-light">{{pgTitle( $getThemeName )}}</span>
   </a>
 
   <!-- Sidebar -->

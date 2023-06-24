@@ -51,7 +51,10 @@
                                     <li><i class="far fa-comments-alt"></i> 6 </li>
                                     <li><i class="fal fa-eye"></i>  587 </li>
                                 </ul>
-                                <div class="author-link"><a href="{{url('author-single')}}"><img src="{{url('public/img/avatar/1.jpg')}}" alt="">  <span>By Jane Taylor</span></a></div>
+                                <div class="author-link"><a href="{{url('author-single')}}">
+                                    <img src="{{url('public/img/avatar/1.jpg')}}" alt="">
+                                    <span>By Jane Taylor</span></a>
+                                </div>
                             </div>
                         </div>
                         <!--list-post end-->

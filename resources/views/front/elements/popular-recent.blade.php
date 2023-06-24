@@ -1,3 +1,6 @@
+<?php
+$getThemeName = getConfigurationfield("FRONT_THEME");
+?>
 <div class="box-widget fl-wrap">
     <div class="box-widget-content">
         <!-- content-tabs-wrap -->
@@ -5,7 +8,7 @@
             <div class="content-tabs fl-wrap">
                 <ul class="tabs-menu fl-wrap no-list-style">
                     <li class="hide"><a href="#tab-popular"> Popular News </a></li>
-                    <li class="current w-100"><a href="#tab-resent">Recent</a></li>
+                    <li class="current w-100"><a href="#tab-resent">Trending</a></li>
                 </ul>
             </div>
             <!--tabs -->
@@ -18,7 +21,7 @@
                             <div class="post-widget-item fl-wrap">
                                 <div class="post-widget-item-media">
                                     <a href="{{url('post-single')}}">
-										<img data-original="{{url('public/img/all/thumbs/1.jpg')}}"  class="lazyload">
+										<img src="{{url('public/img/all/thumbs/1.jpg')}}"  class="">
 									</a>
                                 </div>
                                 <div class="post-widget-item-content">
@@ -44,7 +47,7 @@
                                 <div class="post-widget-item fl-wrap">
                                     <div class="post-widget-item-media">
                                         <a href="{{url('view/'.$data->slug)}}">
-                                            <img class="lazyload" data-original="{{url('storage/app/'.$data->image)}}" alt="{{$data->title}}">
+                                            <img class="" src="{{url('storage/app/'.$data->image)}}" alt="{{$data->title}}" onerror="this.src='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';">
                                         </a>
                                     </div>
                                     <div class="post-widget-item-content">
@@ -53,7 +56,7 @@
                                         </h4>
                                         <ul class="pwic_opt">
                                             <li><span><i class="far fa-clock"></i>{{formatDate( 'd M Y', $data->created_at )}}</span></li>
-                                            <li><span><i class="far fa-comments-alt"></i> 16</span></li>
+                                            <li class="hide"><span><i class="far fa-comments-alt"></i> 16</span></li>
                                             <li><span><i class="fal fa-eye"></i>{{$data->view}}</span></li>
                                         </ul>
                                     </div>

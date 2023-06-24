@@ -9,6 +9,7 @@ use App\Models\Admin\Categories;
 use App\Models\Admin\Recommended;
 use App\Models\Admin\Tags;
 use Illuminate\Http\Request;
+use Image;
 use Illuminate\Support\Facades\Auth;
 
 class BlogsController extends Controller
@@ -86,7 +87,15 @@ class BlogsController extends Controller
         $path = "";
         if ($request->hasFile('image')) {
             $filename = $request->image->getClientOriginalName();
-            $request->image->storeAs('blog', $filename, 'public' );
+            // $request->image->storeAs('blog', $filename, 'public' );
+
+            $image = $request->file('image');
+            $destinationPath = storage_path('/app/public/blog');
+            $img = Image::make($image->path());
+            $img->resize(786, 480, function ($constraint) {
+                //$constraint->aspectRatio();
+            })->save($destinationPath.'/'.$filename);
+
 			$path = "public/blog/".$filename;
         }
 
@@ -104,7 +113,7 @@ class BlogsController extends Controller
 		$blog->keyword = $request->keyword;
         $blog->status = $request->status;
         $blog->save();
-		
+
         //save blog tags
         if( isset( $request->tags ) && COUNT( $request->tags ) > 0 ){
             foreach( $request->tags as $tag ){
@@ -197,7 +206,14 @@ class BlogsController extends Controller
         $blog = Blogs::find($id);
         if ($request->hasFile('image')) {
 			$filename = $request->image->getClientOriginalName();
-            $request->image->storeAs('blog', $filename, 'public' );
+            // $request->image->storeAs('blog', $filename, 'public' );
+
+            $image = $request->file('image');
+            $destinationPath = storage_path('/app/public/blog');
+            $img = Image::make($image->path());
+            $img->resize(786, 480, function ($constraint) {
+                //$constraint->aspectRatio();
+            })->save($destinationPath.'/'.$filename);
 			$blog->image = "public/blog/".$filename;
         }
 

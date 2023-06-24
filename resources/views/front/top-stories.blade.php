@@ -1,3 +1,6 @@
+<?php
+$getThemeName = getConfigurationfield("FRONT_THEME");
+?>
 <div class="section-title sect_dec">
     <h2>Top Stories</h2>
     <h4>Don't miss daily top Story</h4>
@@ -14,7 +17,7 @@
                             <div class="list-post-media">
                                 <a href="{{url('view/'.$data['slug'])}}">
                                     <div class="bg-wrap">
-                                        <div class="bg lazyload" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
+                                        <div class="bg " data-bg="{{url('storage/app/'.$data['image'])}}" onerror="this.data-bg='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';"></div>
                                     </div>
                                 </a>
                                 {{-- <span class="post-media_title">&copy; Image Copyrights Title</span> --}}
@@ -41,10 +44,10 @@
                         <div class="swiper-slide">
                             <div class="grid-post-item  bold_gpi  fl-wrap">
                                 <div class="grid-post-media gpm_sing">
-                                    <div class="bg lazyload" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
+                                    <div class="bg " data-bg="{{url('storage/app/'.$data['image'])}}"></div>
                                     <div class="author-link">
                                         <a href="{{url('author-single')}}">
-                                            <img data-original="{{url('public/img/avatar/2.jpg')}}" class="lazyload">
+                                            <img src="{{url('public/img/avatar/'.$data['author']['id'].'.jpg')}}" class="{{$data['author']['name']}}">
                                             <span>By {{$data['author']['name']}}</span>
                                         </a>
                                     </div>
@@ -82,7 +85,7 @@
                                 <div class="list-post-media">
                                     <a href="{{url('view/'.$data['slug'])}}">
                                         <div class="bg-wrap">
-                                            <div class="bg lazyload" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
+                                            <div class="bg " data-bg="{{url('storage/app/'.$data['image'])}}"></div>
                                         </div>
                                     </a>
                                     {{-- <span class="post-media_title">&copy; Image Copyrights Title</span> --}}

@@ -66,9 +66,9 @@
                                                                             <span class="badge badge-pill badge-success"> Enabled </span>
                                                                     @endif
                                                                 </td>
-                                                                <td class="text-center">{{ formatDate( "d-m-Y h:i", $ar->updated_at ) }}</td>
-																<td class="text-center">{{ $ar->view }}</td>
-                                                                <td class="d-flex text-center">
+                                                                <td class="text-center">{{ $ar->view }}</td>
+																<td class="text-center">{{ formatDate( "d-m-Y h:i", $ar->updated_at ) }}</td>
+																<td class="d-flex text-center">
                                                                     <div class="pr-2">
                                                                         <a href="{{ route('admin.blogs.edit', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center"><i class="fas fa-pencil-alt fa-sm" aria-hidden="true"></i></a>
                                                                     </div>

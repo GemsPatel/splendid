@@ -3,8 +3,11 @@
     <head>
         <!--=============== basic  ===============-->
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php
         $headerInfo = getHeaderInformation();
+        $isRunAdvertisement = getConfigurationfield( "IS_RUN_ADVERTISEMENT" );
+        $getThemeName = getConfigurationfield("FRONT_THEME");
         ?>
         <title>{{ $custom_page_title ?? $headerInfo->custom_page_title }}</title>
     	<base href="{{ url('/') }}" />
@@ -22,7 +25,7 @@
 
         <!--=============== CSS ===============-->
         <link type="text/css" rel="stylesheet" href="{{url('public/css/plugins.css')}}">
-        <link type="text/css" rel="stylesheet" href="{{url('public/css/style.css?v=0.1')}}">
+        <link type="text/css" rel="stylesheet" href="{{url('public/css/style.css?v=0.2')}}">
         <link type="text/css" rel="stylesheet" href="{{url('public/css/color.css')}}">
 
         <!--=============== favicons ===============-->
@@ -34,7 +37,7 @@
 		<meta property="og:description" content="{{ $meta_description ?? $headerInfo->meta_description }}">
 		<meta property="og:url" content="{{ url('/') }}">
 		<meta property="og:site_name" content="TimesOfReading">
-		<meta property="og:image" content="{{ $meta_image ?? url('public/img/logo.png') }}">
+		<meta property="og:image" content="{{ $meta_image ?? url('public/img/'.$getThemeName.'.png') }}">
 
 		<meta property="article:publisher" content="https://www.facebook.com/timesofreading">
 		<meta property="article:modified_time" content="{{date( 'Y-m-d h:i:s' )}}">
@@ -44,14 +47,16 @@
 		<meta name="twitter:label1" content="Est. reading time">
 		<meta name="twitter:data1" content="5 minutes">
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y7LZMV3DD"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-0Y7LZMV3DD');
-        </script>
+        @if( $isRunAdvertisement )
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y7LZMV3DD"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-0Y7LZMV3DD');
+            </script>
+        @endif
     </head>
     <body>
         <!-- main start  -->

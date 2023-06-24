@@ -1541,15 +1541,14 @@ section {
 }
 /*------ pagination -------------------------------------------------*/
 .pagination {
-	/* margin:20px 0 0 0; */
 	text-align:center;
-	/* float: left; */
 	z-index:10;
 	position:relative;
 	background: #b73c01;
 	overflow: hidden;
-	border-radius: 4px;
-	display: inline-block;
+	border-radius: 10px;
+	display: inline-flex;
+	height: 50px;
 }
 .pagination  a {
 	float:left;
@@ -1558,10 +1557,12 @@ section {
 	line-height:50px;
 	box-sizing:border-box;
 	position:relative;
-	font-size:10px;
 	font-weight: 500;
 	color:#fff;
     border-right: 1px solid rgba(255,255,255,0.15);
+}
+.pagination .active {
+    background-color: #292929 !important;
 }
 .pagination a.current-page, .pagination a:hover {
     color:#fff;

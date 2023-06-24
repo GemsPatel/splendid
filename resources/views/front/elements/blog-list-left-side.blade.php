@@ -1,3 +1,6 @@
+<?php
+$getThemeName = getConfigurationfield("FRONT_THEME");
+?>
 <div class="sidebar-content fl-wrap fixed-bar">
       <!-- box-widget -->
       <div class="box-widget fl-wrap">
@@ -16,7 +19,7 @@
           <div class="box-widget-content">
               <div class="banner-widget fl-wrap">
                   <div class="bg-wrap bg-parallax-wrap-gradien">
-                      <div class="bg lazyload" data-bg="{{url('public/img/bg/7.jpg')}}"></div>
+                      <div class="bg" data-bg="{{url('public/img/bg/7.jpg')}}" onerror="this.data-bg='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';"></div>
                   </div>
                   <div class="banner-widget_content">
                       <h5>Visit our awesome merch and souvenir.</h5>

@@ -1,13 +1,16 @@
 @include('front.elements.header')
 @include('front.elements.home-top-slider')
+<?php
+$getThemeName = getConfigurationfield("FRONT_THEME");
+?>
 <!-- section   -->
 <section>
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <div class="main-container fl-wrap fix-container-init">
-                    <div class="content-banner-wrap cbw_mar">
-                        <img data-original="{{url('public/img/all/banner.jpg')}}" class="respimg lazyload" alt="">
+                    <div class="content-banner-wrap cbw_mar hide">
+                        <img src="{{url('public/img/all/banner.jpg')}}" class="respimg " alt="Advertisement">
                     </div>
                     <div class="clearfix"></div>
                     @include('front.top-stories')
@@ -23,52 +26,6 @@
                     @include('front.elements.weather-detail')
     	            <!-- Weather Location box-widget end -->
                     <!-- box-widget -->
-                    <div class="box-widget fl-wrap">
-                            <div class="widget-title">Follow Us</div>
-                            <div class="box-widget-content">
-                            <div class="social-widget">
-                                    <a href="#" target="_blank" class="facebook-soc">
-                                    <i class="fab fa-facebook-f"></i>
-                                    <span class="soc-widget-title">Likes</span>
-                                    <span class="soc-widget_counter">2640</span>
-                                    </a>
-                                    <a href="#" target="_blank" class="twitter-soc">
-                                    <i class="fab fa-twitter"></i>
-                                    <span class="soc-widget-title">Followers</span>
-                                    <span class="soc-widget_counter">1456</span>
-                                    </a>
-                                    <a href="#" target="_blank" class="youtube-soc">
-                                    <i class="fab fa-youtube"></i>
-                                    <span class="soc-widget-title">Followers</span>
-                                    <span class="soc-widget_counter">1456</span>
-                                    </a>
-                                    <a href="#" target="_blank" class="instagram-soc">
-                                    <i class="fab fa-instagram"></i>
-                                    <span class="soc-widget-title">Followers</span>
-                                    <span class="soc-widget_counter">1456</span>
-                                    </a>
-                            </div>
-                            </div>
-                        </div>
-                        <!-- box-widget  end -->
-                        <!-- box-widget -->
-                        <div class="box-widget fl-wrap">
-                            <div class="widget-title">Popular Tags</div>
-                            <div class="box-widget-content">
-                            <div class="tags-widget">
-                                    <a href="#">Science</a>
-                                    <a href="#">Politics</a>
-                                    <a href="#">Technology</a>
-                                    <a href="#">Business</a>
-                                    <a href="#">Sports</a>
-                                    <a href="#">Food</a>
-                            </div>
-                            </div>
-                        </div>
-                        <!-- box-widget  end -->
-                        <!-- editor-choice-box-widget -->
-                        @include('front.elements.editor-choice')
-                        <!-- editor-choice-box-widget end -->
                 </div>
                 <!-- sidebar  end -->
                 </div>
@@ -94,7 +51,7 @@
                                     <div class="list-post-media">
                                         <a href="{{url('view/'.@$bestCategories[0]['blog_best_single_view']['slug'])}}">
                                             <div class="bg-wrap">
-                                                <div class="lazyload" data-bg="{{url('storage/app/'.$bestCategories[0]['image'])}}"></div>
+                                                <div class="" data-bg="{{url('storage/app/'.$bestCategories[0]['image'])}}" onerror="this.data-bg='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';"></div>
                                             </div>
                                         </a>
                                     </div>
@@ -105,14 +62,13 @@
                                         <span class="post-date"><i class="far fa-clock"></i>{{formatDate( 'd M Y', @$bestCategories[0]['blog_best_single_view']['created_at'] )}}</span>
                                         <p>{{@$bestCategories[0]['blog_best_single_view']['short_description']}}</p>
                                         <ul class="post-opt">
-                                            <li><i class="far fa-comments-alt"></i> 6 </li>
+                                            <li class="hide"><i class="far fa-comments-alt"></i> 6 </li>
                                             <li><i class="fal fa-eye"></i>{{@$bestCategories[0]['blog_best_single_view']['view']}}</li>
                                         </ul>
                                         <div class="author-link">
                                             <a href="{{url('author-single')}}">
-                                                <img data-original="{{url('public/img/avatar/1.jpg')}}" class="lazyload">
-													<span>By {{@$bestCategories[0]['blog_best_single_view']['author']['name']}}
-													</span>
+                                                <img src="{{url('public/img/avatar/'.@$bestCategories[0]['blog_best_single_view']['author']['id'].'.jpg')}}" class="{{@$bestCategories[0]['blog_best_single_view']['author']['name']}}">
+                                                <span>By {{@$bestCategories[0]['blog_best_single_view']['author']['name']}}</span>
                                             </a>
                                         </div>
                                     </div>
@@ -138,7 +94,7 @@
                                                 <div class="list-post-media">
                                                     <a href="{{url('view/'.@$data['blog_best_single_view']['slug'])}}">
                                                         <div class="bg-wrap">
-                                                            <div class="bg lazyload" data-bg="{{url('storage/app/'.$data['image'])}}"></div>
+                                                            <div class="bg" data-bg="{{url('storage/app/'.$data['image'])}}" onerror="this.data-bg='{{url("public/img/".$getThemeName.".png")}}';this.onerror='';"></div>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -154,12 +110,12 @@
                                                     </span>
                                                     <p>{{@$data['blog_best_single_view']['short_description']}}</p>
                                                     <ul class="post-opt">
-                                                        <li><i class="far fa-comments-alt"></i> 6 </li>
+                                                        <li class="hide"><i class="far fa-comments-alt"></i> 6 </li>
                                                         <li><i class="fal fa-eye"></i> {{@$data['blog_best_single_view']['view']}} </li>
                                                     </ul>
                                                     <div class="author-link">
                                                         <a href="{{url('author-single')}}">
-                                                            <img data-original="{{url('public/img/avatar/1.jpg')}}" class="lazyload">
+                                                            <img src="{{url('public/img/avatar/'.@$data['blog_best_single_view']['author']['id'].'.jpg')}}" class="{{@$data['blog_best_single_view']['author']['name']}}">
                                                             <span>By {{@$data['blog_best_single_view']['author']['name']}}</span>
                                                         </a></div>
                                                 </div>
@@ -183,9 +139,9 @@
       </section>
       <!-- section end -->
       <!-- section  -->
-      <div class="gray-bg ad-wrap fl-wrap">
+      <div class="gray-bg ad-wrap fl-wrap hide">
             <div class="content-banner-wrap">
-                  <img data-original="{{url('public/img/all/banner.jpg')}}" class="respimg lazyload" alt="">
+                  <img src="{{url('public/img/all/banner.jpg')}}" class="respimg " alt="Advertisement">
             </div>
       </div>
       <!-- section end -->
