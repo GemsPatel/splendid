@@ -92,7 +92,7 @@
                                                       <label for="profile_pic">Profile Pic</label>
                                                       <div class="row">
                                                             <div class="col-md-12 text-center">
-                                                                  <img src="{{url('../storage/app/'.$dataArr->profile_pic)}}" class="" onerror="this.src='{{url(\'public/img/'.$getThemeName.'.png')}}';this.onerror='';" style="height: 295px;">
+                                                                  <img src="{{url('../storage/app/'.$dataArr->profile_pic)}}" class="" onerror="this.src='{{url('\'public/img/'.$getThemeName.'.png')}}';this.onerror='';" style="height: 295px;">
                                                             </div>
                                                       </div>
                                                 </div>

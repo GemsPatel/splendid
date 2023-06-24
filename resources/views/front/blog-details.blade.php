@@ -16,7 +16,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
             <h5>{{$data->short_description}}</h5>
             <div class="author-link">
                 <a href="{{url('author-single')}}">
-                    <img src="{{url('public/img/avatar/'.$data->author->id.'.jpg')}}" onerror="this.src='{{url(\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" class="" alt="{{$data->author->name}}">
+                    <img src="{{url('public/img/avatar/'.$data->author->id.'.jpg')}}" onerror="this.src='{{url('\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" class="" alt="{{$data->author->name}}">
                     <span>By {{$data->author->name}}</span>
                 </a>
             </div>

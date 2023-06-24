@@ -23,7 +23,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                 <div class="clearfix"></div>
                                 <div class="author-link">
                                     <a href="{{url('author-single')}}">
-                                        <img class="" src="{{url('public/img/avatar/'.$slider->author->id.'.jpg')}}" onerror="this.src='{{url(\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" alt="{{$slider->author->name}}">
+                                        <img class="" src="{{url('public/img/avatar/'.$slider->author->id.'.jpg')}}" onerror="this.src='{{url('\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" alt="{{$slider->author->name}}">
                                         <span>By {{$slider->author->name}}</span>
                                     </a>
                                 </div>

@@ -47,7 +47,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                 <div class="post-widget-item fl-wrap">
                                     <div class="post-widget-item-media">
                                         <a href="{{url('view/'.$data->slug)}}">
-                                            <img class="" src="{{url('storage/app/'.$data->image)}}" alt="{{$data->title}}" onerror="this.src='{{url(\'public/img/'.$getThemeName.'.png')}}';this.onerror='';">
+                                            <img class="" src="{{url('storage/app/'.$data->image)}}" alt="{{$data->title}}" onerror="this.src='{{url('\'public/img/'.$getThemeName.'.png')}}';this.onerror='';">
                                         </a>
                                     </div>
                                     <div class="post-widget-item-content">

@@ -17,7 +17,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                             <div class="list-post-media">
                                 <a href="{{url('view/'.$data['slug'])}}">
                                     <div class="bg-wrap">
-                                        <div class="bg " data-bg="{{url('storage/app/'.$data['image'])}}" onerror="this.data-bg='{{url(\'public/img/'.$getThemeName.'.png')}}';this.onerror='';"></div>
+                                        <div class="bg " data-bg="{{url('storage/app/'.$data['image'])}}" onerror="this.data-bg='{{url('\'public/img/'.$getThemeName.'.png')}}';this.onerror='';"></div>
                                     </div>
                                 </a>
                                 {{-- <span class="post-media_title">&copy; Image Copyrights Title</span> --}}
@@ -47,7 +47,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                     <div class="bg " data-bg="{{url('storage/app/'.$data['image'])}}"></div>
                                     <div class="author-link">
                                         <a href="{{url('author-single')}}">
-                                            <img src="{{url('public/img/avatar/'.$data['author']['id'].'.jpg')}}" onerror="this.src='{{url(\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" alt="{{$data['author']['name']}}">
+                                            <img src="{{url('public/img/avatar/'.$data['author']['id'].'.jpg')}}" onerror="this.src='{{url('\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" alt="{{$data['author']['name']}}">
                                             <span>By {{$data['author']['name']}}</span>
                                         </a>
                                     </div>
