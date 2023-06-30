@@ -45,6 +45,7 @@
                                                 <thead>
                                                       <tr>
                                                         <th>#</th>
+														<th class="text-center">Image</th>
                                                         <th class="text-center">Blog</th>
                                                         <th class="text-center">Category</th>
                                                         <th class="text-center">Status</th>
@@ -57,6 +58,9 @@
                                                       @forelse ($dataArr as $ar)
                                                             <tr id="row_{{$ar->id}}" class="role_row">
                                                                 <td class="text-center">{{ $ar->id }}</td>
+																<td>
+																	<img src="{{url('storage/app/'.$ar->image)}}" alt="{{ $ar->title }}" height="55px">
+																</td>
                                                                 <td>{{ $ar->title }}</td>
                                                                 <td class="text-center">{{ $ar->category->title }}</td>
                                                                 <td class="text-center">
@@ -75,18 +79,11 @@
                                                                     <div class="pr-2">
                                                                         <a href="{{url( 'view/'.$ar->slug )}}" class="btn btn-success btn-size p-0 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" target="_blank"><i class="fas fa-eye fa-sm" aria-hidden="true"></i></a>
                                                                     </div>
-                                                                    <div class="pr-2">
-                                                                        {{-- <form action="{{ route('admin.blogs.delete', [$ar->id] ) }}" method="POST">
-                                                                            @method('DELETE')
-                                                                            @csrf --}}
-                                                                            <button class="btn btn-danger btn-size p-0 d-flex align-items-center justify-content-center delete-record" data-id="{{$ar->id}}" data-title="{{ $ar->title }}" data-segment="blogs"><i class="fa fa-trash fa-sm" aria-hidden="true"></i></button>
-                                                                        {{-- </form> --}}
-                                                                    </div>
                                                                 </td>
                                                             </tr>
                                                       @empty
                                                             <tr class="text-center">
-                                                                  <td colspan="7">There is no role available.</td>
+                                                                  <td colspan="8">There is no role available.</td>
                                                             </tr>
                                                       @endforelse
                                                 </tbody>

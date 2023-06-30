@@ -94,11 +94,13 @@ function getHostStories(){
  */
 function getCurrentLocationDetails( $res='cityName' ){
     $ip = FacadesRequest::ip();
-    if( $ip == "127.0.0.1" || $ip == "::1" ){
+    if( $ip == "127.0.0.1" || strlen( $ip ) < 7 ){
         $ip = "150.107.232.217";
     }
 
     $locationPosition = Location::get( $ip );
+    // echo "<pre>";
+    // print_r($locationPosition);die;
     return $locationPosition->$res;
 }
 

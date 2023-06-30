@@ -1041,13 +1041,13 @@ blockquote:before {
 	color:#fff;
 }
 .hero-item h4 {
-    font-size: 14px;
-    font-weight: 600;
-    text-align: left;
-    font-family: 'Playfair Display', cursive;
-	max-width: 700px;
+    font-size: 15px;
+    /*font-weight: 600;*/
+    text-align: justify;
+    font-family: monospace;
+	/*max-width: 700px;*/
 	line-height: 22px;
-	padding-bottom: 15px;
+	/*padding-bottom: 15px;*/
 }
 .hero-item .post-category-marker {
 	float: left;

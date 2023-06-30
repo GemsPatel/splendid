@@ -16,11 +16,18 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                         </div>
                         <div class="hero-item fl-wrap">
                             <div class="container">
+                                <a class="post-category-marker" href="{{url('category/'.$slider->category->slug)}}">{{$slider->category->title}}</a>
                                 <div class="clearfix"></div>
-                                <h2>
-                                    <a href="{{url('category/'.$slider->slug)}}">{{$slider->title}}</a>
-                                </h2>
-                                <h4>{{substr( $slider->short_description, 0, 600)}}...</h4>
+                                <h2><a href="{{url('view/'.$slider->slug)}}">{{$slider->title}}</a></h2>
+                                <h4>{{$slider->short_description}}</h4>
+                                <div class="clearfix"></div>
+                                <div class="author-link">
+                                    <a href="{{url('author-single')}}">
+                                        <img class="" src="{{url('public/img/avatar/'.$slider->author->id.'.jpg')}}" onerror="this.src='{{url('\'public/img/'.$getThemeName.'-favicon.icon')}}';this.onerror='';" alt="{{$slider->author->name}}">
+                                        <span>By {{$slider->author->name}}</span>
+                                    </a>
+                                </div>
+                                <span class="post-date"><i class="far fa-clock"></i>{{formatDate( 'd M Y', $slider->created_at )}}</span>
                             </div>
                         </div>
                     </div>
@@ -49,9 +56,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                     </div>
                                     <div class="hsc-list_item-content fl-wrap">
                                         <h4>{{$slider->title}}</h4>
-                                        <span class="post-date">
-                                            <i class="far fa-clock"></i>{{formatDate( 'd M Y', $slider->created_at )}}
-                                        </span>
+                                        <span class="post-date"><i class="far fa-clock"></i>{{formatDate( 'd M Y', $slider->created_at )}}</span>
                                     </div>
                                 </div>
                             </div>

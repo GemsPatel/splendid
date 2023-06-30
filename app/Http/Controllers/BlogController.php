@@ -13,10 +13,16 @@ class BlogController extends Controller
      *
      */
     function index( Request $request ){
-        $topSliderArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
-                    ->where( [ 'status' => 1 ] )
-                    ->orderBy( 'id', 'desc' )
-                    ->paginate(5);
+        // $topSliderArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
+        //             ->where( [ 'status' => 1 ] )
+        //             ->orderBy( 'id', 'desc' )
+        //             ->paginate(5);
+
+        $topSliderArr = Categories::where( [ 'status' => 1 ] )
+                    ->inRandomOrder()
+                    ->limit(5)
+                    ->get();
+                    // ->paginate(5);
 
         $topStories = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
                     ->where( [ 'status' => 1 ] )

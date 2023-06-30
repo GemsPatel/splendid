@@ -1,6 +1,5 @@
 // All functions  ------------------
-function initGmag() {
-      $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">');
+function initShreeGurve() {
       "use strict";
         //   date------------------
       var date = new Date(),
@@ -206,20 +205,7 @@ function initGmag() {
       $(document).on('keyup', '#contactform input, #contactform textarea', function () {
           $("#message").slideUp(1500);
       });
-      //   mailchimp------------------
-      $("#subscribe").ajaxChimp({
-          language: "eng",
-          url: "https://gmail.us1.list-manage.com/subscribe/post?u=1fe818378d5c129b210719d80&amp;id=a2792f681b"
-      });
-      $.ajaxChimp.translations.eng = {
-          submit: "Submitting...",
-          0: '<i class="fal fa-check"></i> We will be in touch soon!',
-          1: '<i class="fal fa-exclamation-circle"></i> You must enter a valid e-mail address.',
-          2: '<i class="fal fa-exclamation-circle"></i> E-mail address is not valid.',
-          3: '<i class="fal fa-exclamation-circle"></i> E-mail address is not valid.',
-          4: '<i class="fal fa-exclamation-circle"></i> E-mail address is not valid.',
-          5: '<i class="fal fa-exclamation-circle"></i> E-mail address is not valid.'
-      };
+      
       $(".to-top").on("click", function (a) {
           a.preventDefault();
           $("html, body").animate({
@@ -445,12 +431,12 @@ function initGmag() {
               loop: true,
               centeredSlides: true,
               freeMode: false,
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 10,
               grabCursor: true,
               mousewheel: false,
               parallax: false,
-              speed: 1400,
+              speed: 10000,
               navigation: {
                   nextEl: '.hc-cont-next',
                   prevEl: '.hc-cont-prev',
@@ -590,6 +576,7 @@ function initGmag() {
       $("#weather-widget").ideaboxWeather({
           location: datacityw,
       });
+	  
       // twitter ------------------
       if ($("#footer-twiit").length > 0) {
           var config1 = {
@@ -700,5 +687,5 @@ function initGmag() {
   });
   // Init all functions------------------
   $(document).ready(function () {
-      initGmag();
+      initShreeGurve();
   });

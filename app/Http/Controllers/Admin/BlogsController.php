@@ -92,7 +92,7 @@ class BlogsController extends Controller
             $image = $request->file('image');
             $destinationPath = storage_path('/app/public/blog');
             $img = Image::make($image->path());
-            $img->resize(786, 480, function ($constraint) {
+            $img->resize(820, 400, function ($constraint) {
                 //$constraint->aspectRatio();
             })->save($destinationPath.'/'.$filename);
 
@@ -211,7 +211,7 @@ class BlogsController extends Controller
             $image = $request->file('image');
             $destinationPath = storage_path('/app/public/blog');
             $img = Image::make($image->path());
-            $img->resize(786, 480, function ($constraint) {
+            $img->resize(820, 400, function ($constraint) {
                 //$constraint->aspectRatio();
             })->save($destinationPath.'/'.$filename);
 			$blog->image = "public/blog/".$filename;
