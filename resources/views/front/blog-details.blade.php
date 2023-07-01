@@ -194,7 +194,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                     </div>
                     <!-- box-widget  end -->
                     <!-- box-widget -->
-                    <div class="box-widget fl-wrap">
+                    <div class="box-widget fl-wrap hide">
                         <div class="widget-title">Cetegories</div>
                         <div class="box-widget-content">
                             <div class="sb-categories_bg">
@@ -262,13 +262,18 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                         </div>
                     </div>
                     <!-- box-widget  end -->
-                    <!-- Editor box-widget -->
-                    @include('front.elements.editor-choice')
-                    <!-- Editor box-widget  end -->
-
+                    
+					<!-- Weather Location box-widget -->
+                    @include('front.elements.weather-detail')
+    	            <!-- Weather Location box-widget end -->
+					
                     <!-- popular recent box-widget -->
                     @include('front.elements.popular-recent')
                     <!-- popular recent box-widget  end -->
+					
+					<!-- Editor box-widget -->
+                    @include('front.elements.editor-choice')
+                    <!-- Editor box-widget  end -->
                 </div>
                 <!-- sidebar  end -->
             </div>

@@ -18,6 +18,6 @@ class Categories extends Model
     }
 
     public function blog_best_single_view(){
-        return $this->hasOne( Blogs::class, 'category_id', 'id' )->orderBy( 'view', 'desc' )->with('blog_tag_map', 'author');
+        return $this->hasOne( Blogs::class, 'category_id', 'id' )->orderBy( 'view', 'desc' )->where( 'status', 1 );//->with('blog_tag_map', 'author')
     }
 }

@@ -42,7 +42,9 @@ class BlogController extends Controller
 
         $bestCategories = Categories::with('blog_best_single_view')
                     ->where( [ 'status' => 1 ] )
+                    //->where( 'id', '!=', 13 )
                     ->inRandomOrder()
+                    ->limit(5)
                     ->get();
 
         return view('front.index', compact('topStories', 'topSliderArr', 'recentArr', 'bestCategories' ));
@@ -86,10 +88,10 @@ class BlogController extends Controller
                 ->where( [ 'slug' => $slug ] )
                 ->first();//, 'sub_category'
 
-        $categories = Categories::where( [ 'status' => 1 ] )
-                    ->inRandomOrder()
-                    ->limit(12)
-                    ->get();
+        $categories = [];//Categories::where( [ 'status' => 1 ] )
+                    //->inRandomOrder()
+                    //->limit(12)
+                    //->get();
 
         $recentArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
                     ->where( [ 'status' => 1 ] )
