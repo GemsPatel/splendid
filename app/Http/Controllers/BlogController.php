@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin\Blogs;
 use App\Models\Admin\Categories;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Redirect;
 
 class BlogController extends Controller
 {
@@ -13,6 +13,7 @@ class BlogController extends Controller
      *
      */
     function index( Request $request ){
+		
         // $topSliderArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
         //             ->where( [ 'status' => 1 ] )
         //             ->orderBy( 'id', 'desc' )
@@ -50,6 +51,20 @@ class BlogController extends Controller
         return view('front.index', compact('topStories', 'topSliderArr', 'recentArr', 'bestCategories' ));
     }
 
+	/**
+	 *
+	 */
+	function redirectOrigionalUrl( Request $request, $short_url="" ){
+		if( $short_url ){
+			$blog = Blogs::select('slug')->where( [ 'short_url' => $short_url ] )->first();
+			if( $blog ){
+				return Redirect::to( url( '/view/'.$blog->slug ) );
+			}
+		}
+		
+		return Redirect::to( url( '/' ) );
+	}
+	
     /**
      *
      */

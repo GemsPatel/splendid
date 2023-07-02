@@ -272,7 +272,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                     <!-- popular recent box-widget  end -->
 					
 					<!-- Editor box-widget -->
-                    @include('front.elements.editor-choice')
+                    {{-- @include('front.elements.editor-choice') --}}
                     <!-- Editor box-widget  end -->
                 </div>
                 <!-- sidebar  end -->

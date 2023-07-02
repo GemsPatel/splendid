@@ -35,6 +35,7 @@ Route::get('/', [BlogController::class, 'index']);
 Route::get('category/{slug}', [BlogController::class, 'getCategoryWiseBlogs'])->name('getCategoryWiseBlogs');
 Route::get('view/{slug}', [BlogController::class, 'getBlogDetails']);
 Route::get('read-all', [BlogController::class, 'getBlogLists'])->name( 'readAll' );
+Route::get('short/{url?}', [BlogController::class, 'redirectOrigionalUrl']);
 
 //testing function
 Route::get('/get-xml-mp3', [CronController::class, 'getXMLMP3']);
@@ -81,3 +82,7 @@ Route::get('real-details', function () { return view('front.real-details'); });
 Route::get('shop', function () { return view('front.shop'); });
 Route::get('generate-blade', [CronController::class, 'generateBladeFile']);
 Route::get('export-pings-tree-log', [CronController::class, 'ExportPingsTreeLogFromAPISecond']);
+
+Route::get('create-short-url', function () { 
+	createTinyUrl();
+});
