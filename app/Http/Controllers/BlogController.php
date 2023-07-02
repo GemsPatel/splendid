@@ -123,7 +123,7 @@ class BlogController extends Controller
         $custom_page_title = $data->title;
         $meta_description = $data->short_description;
         $meta_keyword = $data->short_description;
-        $meta_image = $data->image;
+        $meta_image = url( $data->image );
 
         return view('front.blog-details', compact( 'data', 'categories', 'recentArr', 'prevBlog', 'nextBlog', 'custom_page_title', 'meta_description', 'meta_keyword', 'meta_image' ) );
     }
