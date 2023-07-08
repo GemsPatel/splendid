@@ -118,17 +118,17 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.275.1",
-            "version_normalized": "3.275.1.0",
+            "version": "3.275.5",
+            "version_normalized": "3.275.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6cf6aacecda1dec52bf4a70d8e1503b5bc56e924"
+                "reference": "d46961b82e857f77059c0c78160719ecb26f6cc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6cf6aacecda1dec52bf4a70d8e1503b5bc56e924",
-                "reference": "6cf6aacecda1dec52bf4a70d8e1503b5bc56e924",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d46961b82e857f77059c0c78160719ecb26f6cc6",
+                "reference": "d46961b82e857f77059c0c78160719ecb26f6cc6",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,7 @@
                 "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
                 "ext-sockets": "To use client-side monitoring"
             },
-            "time": "2023-06-30T18:23:40+00:00",
+            "time": "2023-07-07T18:20:11+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -210,7 +210,7 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.275.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.275.5"
             },
             "install-path": "../aws/aws-sdk-php"
         },
@@ -2207,17 +2207,17 @@
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.52.0",
-            "version_normalized": "1.52.0.0",
+            "version": "v1.52.1",
+            "version_normalized": "1.52.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-core.git",
-                "reference": "bd87e418923e0d836c7e754d82e66bc0b79964ab"
+                "reference": "8214910f79b5508d4cd1cd48f39d7970443071d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/bd87e418923e0d836c7e754d82e66bc0b79964ab",
-                "reference": "bd87e418923e0d836c7e754d82e66bc0b79964ab",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/8214910f79b5508d4cd1cd48f39d7970443071d5",
+                "reference": "8214910f79b5508d4cd1cd48f39d7970443071d5",
                 "shasum": ""
             },
             "require": {
@@ -2233,7 +2233,7 @@
             "require-dev": {
                 "erusev/parsedown": "^1.6",
                 "google/cloud-common-protos": "^0.4",
-                "google/gax": "^1.9",
+                "google/gax": "^1.19.1",
                 "opis/closure": "^3",
                 "phpdocumentor/reflection": "^5.0",
                 "phpspec/prophecy-phpunit": "^2.0",
@@ -2244,7 +2244,7 @@
                 "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
                 "symfony/lock": "Required for the Spanner cached based session pool. Please require the following commit: 3.3.x-dev#1ba6ac9"
             },
-            "time": "2023-06-21T21:05:25+00:00",
+            "time": "2023-07-07T20:46:38+00:00",
             "bin": [
                 "bin/google-cloud-batch"
             ],
@@ -2269,23 +2269,23 @@
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.52.0"
+                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.52.1"
             },
             "install-path": "../google/cloud-core"
         },
         {
             "name": "google/cloud-storage",
-            "version": "v1.32.0",
-            "version_normalized": "1.32.0.0",
+            "version": "v1.33.0",
+            "version_normalized": "1.33.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-storage.git",
-                "reference": "2dd5cee0da51e94bcf39c0af9cefd0ec6b931685"
+                "reference": "05ae33620feebe1107756b59fe0329cace3b5e13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/2dd5cee0da51e94bcf39c0af9cefd0ec6b931685",
-                "reference": "2dd5cee0da51e94bcf39c0af9cefd0ec6b931685",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/05ae33620feebe1107756b59fe0329cace3b5e13",
+                "reference": "05ae33620feebe1107756b59fe0329cace3b5e13",
                 "shasum": ""
             },
             "require": {
@@ -2307,7 +2307,7 @@
                 "google/cloud-pubsub": "May be used to register a topic to receive bucket notifications.",
                 "phpseclib/phpseclib": "May be used in place of OpenSSL for creating signed Cloud Storage URLs. Please require version ^2."
             },
-            "time": "2023-06-21T21:05:25+00:00",
+            "time": "2023-07-07T20:46:38+00:00",
             "type": "library",
             "extra": {
                 "component": {
@@ -2329,7 +2329,7 @@
             ],
             "description": "Cloud Storage Client for PHP",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-storage/tree/v1.32.0"
+                "source": "https://github.com/googleapis/google-cloud-php-storage/tree/v1.33.0"
             },
             "install-path": "../google/cloud-storage"
         },
@@ -6058,17 +6058,17 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.67.0",
-            "version_normalized": "2.67.0.0",
+            "version": "2.68.1",
+            "version_normalized": "2.68.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "c1001b3bc75039b07f38a79db5237c4c529e04c8"
+                "reference": "4f991ed2a403c85efbc4f23eb4030063fdbe01da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/c1001b3bc75039b07f38a79db5237c4c529e04c8",
-                "reference": "c1001b3bc75039b07f38a79db5237c4c529e04c8",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4f991ed2a403c85efbc4f23eb4030063fdbe01da",
+                "reference": "4f991ed2a403c85efbc4f23eb4030063fdbe01da",
                 "shasum": ""
             },
             "require": {
@@ -6091,7 +6091,7 @@
                 "phpunit/phpunit": "^7.5.20 || ^8.5.26 || ^9.5.20",
                 "squizlabs/php_codesniffer": "^3.4"
             },
-            "time": "2023-05-25T22:09:47+00:00",
+            "time": "2023-06-20T18:29:04+00:00",
             "bin": [
                 "bin/carbon"
             ],
