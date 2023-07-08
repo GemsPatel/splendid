@@ -100,15 +100,14 @@ class BlogsController extends Controller
         }
 
         $slug = rtrim( convertStringToSlug( $request->title ), "-" );
-		$short_url = _en( time() );
+		//$short_url = _en( time() );
         $user_id = auth()->guard('admin')->user()->id;
         $blog->user_id = $user_id;
         $blog->category_id = $request->category_id;
         $blog->sub_category_id = $request->sub_category_id;
         $blog->title = $request->title;
         $blog->slug = $slug;
-		$blog->short_url = $short_url;
-        $blog->image = $path;
+		$blog->image = $path;
         $blog->short_description = $request->short_description;
         $blog->description = $request->description;
 		$blog->keyword = $request->keyword;
@@ -142,6 +141,9 @@ class BlogsController extends Controller
         //generate tmp blade file
         // es_GenerateBladeFile( $slug );
 
+		$blog->short_url = _en( $blog->id );
+		$blog->save();
+		
         $request->session()->flash('message', 'Blog successfully created');
         return redirect()->route('admin.blogs');
     }

@@ -168,7 +168,7 @@ function createTinyUrl(){
 	if( isset( $_GET['create'] ) && $_GET['create'] == 1 ){
 		$blogArr = Blogs::select('id')->get();
 		foreach( $blogArr as $ar ){
-			$short_url = _en( time().$ar->id );
+			$short_url = _en( $ar->id );
 			Blogs::where( [ "id" => $ar->id ] )->update( [ "short_url" => $short_url ] );
 		}
 	}
