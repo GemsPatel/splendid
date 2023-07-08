@@ -129,17 +129,19 @@
             <script src="{{url('public/js/admin.js?v='.time())}}"></script>
             <script src="{{url('public/js/form-submit.js?v='.time())}}"></script>
 
-            <script>
-                  ClassicEditor
-                  .create( document.querySelector( '#description' ) )
-                  .catch( error => {
-                  console.error( error );
-                  } );
-            </script>
-
             @yield('js')
 
             <script>
+                if( $('#description').length > 0 ){
+                    ClassicEditor
+                        .create( document.querySelector( '#description' ) )
+                        .then( editor => {
+                                console.log( editor );
+                        } )
+                        .catch( error => {
+                                console.error( error );
+                        } );
+                }
                 $('.dropify').dropify({});
 
                 $("#import_excel_file").on( "click", function(){

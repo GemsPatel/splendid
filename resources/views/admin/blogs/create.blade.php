@@ -1,4 +1,5 @@
 @include('admin.elements.header')
+<script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/classic/ckeditor.js"></script>
 <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
@@ -168,7 +169,7 @@
                                                     <div class="error">{{ $errors->first('description') }}</div>
                                             @endif
                                         </div>
-                                    
+
                                         <div class="form-group">
                                             <label for="title">Keyword</label>
                                             <textarea type="text" class="form-control" id="keyword" name="keyword" placeholder="{{ __('Blog keyword') }}" rows="5">{{old('keyword')}}</textarea>
