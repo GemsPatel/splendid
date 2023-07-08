@@ -87,7 +87,7 @@ class BlogController extends Controller
 
         $action = url('category/'.$slug );
 
-        $custom_page_title = $category->title;
+        $custom_page_title = $category->title.' - TimesOfReading';
         $meta_description = $category->title;
         $meta_keyword = $category->slug;
         // $meta_image = $category->slug;
@@ -120,7 +120,7 @@ class BlogController extends Controller
 
         Blogs::increment( 'view', 1 ); // count + 5
 
-        $custom_page_title = $data->title;
+        $custom_page_title = $data->title.' - TimesOfReading';
         $meta_description = $data->short_description;
         $meta_keyword = $data->short_description;
         $meta_image = url( 'storage/app/'.$data->image );
