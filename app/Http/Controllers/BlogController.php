@@ -118,7 +118,8 @@ class BlogController extends Controller
         $prevBlog = Blogs::select('id', 'slug', 'title', 'image')->where( 'id', '<', $data->id )->where( 'status', 1 )->limit(1)->orderBy( 'id', 'DESC' )->get();
         $nextBlog = Blogs::select('id', 'slug', 'title', 'image')->where( 'id', '>', $data->id )->where( 'status', 1 )->limit(1)->orderBy( 'id', 'ASC' )->get();
 
-        if ( getCurrentLocationDetails( 'cityName', 1 ) ){
+		$isRunAdvertisementParam = ( isset( $_GET['advt'] ) ) ? $_GET['advt'] : 1;
+        if ( $isRunAdvertisementParam ){
             Blogs::increment( 'view', 1 ); // count + 1
         }
 

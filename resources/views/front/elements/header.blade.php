@@ -8,7 +8,7 @@
         $headerInfo = getHeaderInformation();
         $isRunAdvertisement = getConfigurationfield( "IS_RUN_ADVERTISEMENT" );
         $getThemeName = getConfigurationfield("FRONT_THEME");
-        $isRunAdvertisementParam = ( isset( $_GET['advt'] ) ) ? $_GET['advt'] : true;
+        $isRunAdvertisementParam = ( isset( $_GET['advt'] ) ) ? $_GET['advt'] : 1;
         ?>
         <title>{{ $custom_page_title ?? $headerInfo->custom_page_title }}</title>
     	<base href="{{ url('/') }}" />

@@ -62,7 +62,7 @@
 																	<img src="{{url('storage/app/'.$ar->image)}}" alt="{{ $ar->title }}" height="55px">
 																</td>
                                                                 <td>
-                                                                    <a href="{{url( 'view/'.$ar->slug.'?advt=false' )}}" title="{{ $ar->title }}">
+                                                                    <a href="{{url( 'view/'.$ar->slug.'?advt=0' )}}" target="_blank" title="{{ $ar->title }}">
                                                                         {{ $ar->title }}
                                                                     </a>
                                                                 </td>
