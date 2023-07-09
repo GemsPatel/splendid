@@ -181,19 +181,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
             <div class="col-md-4">
                 <!-- sidebar   -->
                 <div class="sidebar-content fl-wrap fixed-bar">
-                    <!-- box-widget -->
-                    <div class="box-widget fl-wrap hide">
-                        <div class="box-widget-content">
-                            <div class="search-widget fl-wrap">
-                                <form action="#">
-                                    <input name="se" id="se12" type="text" class="search" placeholder="Search..." value="" />
-                                    <button class="search-submit2" id="submit_btn12"><i class="far fa-search"></i> </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- box-widget  end -->
-                    <!-- box-widget -->
+					<!-- box-widget -->
                     <div class="box-widget fl-wrap hide">
                         <div class="widget-title">Cetegories</div>
                         <div class="box-widget-content">

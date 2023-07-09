@@ -95,23 +95,13 @@ function getHostStories(){
  */
 function getCurrentLocationDetails( $res='cityName', $checkReal=false ){
     $ip = FacadesRequest::ip();
-    $dummyIp = "150.107.232.217";
     if( $ip == "127.0.0.1" || strlen( $ip ) < 7 ){
-        $ip = $dummyIp;
+        $ip = "150.107.232.217";
     }
 
     $locationPosition = Location::get( $ip );
-    if( $checkReal ){
-        Storage::append( "storage/liveIPs-".date( 'd-m-Y' ).".txt", $locationPosition );
-        if( $ip === $dummyIp ){
-            return false;
-        } else {
-            return true;
-        }
-    } else {
-        // $locationPosition = Location::get( $ip );
-        return $locationPosition->$res;
-    }
+	Storage::append( "storage/liveIPs-".date( 'd-m-Y' ).".txt", $locationPosition );
+	return $locationPosition->$res;
 }
 
 /**
