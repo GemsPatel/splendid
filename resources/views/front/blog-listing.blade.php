@@ -52,7 +52,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                     <p>{{$ar->short_description}} </p>
                                     <ul class="post-opt">
                                         <li class="hide"><i class="far fa-comments-alt"></i> 6 </li>
-                                        <li><i class="fal fa-eye"></i> {{$ar->view}} </li>
+                                        <li><i class="fal fa-eye"></i> {{ format_number_in_k_notation( $ar->view ) }} </li>
                                     </ul>
                                     <div class="author-link">
 										<a href="{{url('author-single')}}">

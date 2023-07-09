@@ -22,7 +22,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
             </div>
             <ul class="post-opt">
                 <li class="hide"><i class="far fa-comments-alt"></i> 4 </li>
-                <li><i class="fal fa-eye"></i>{{$data->view}}</li>
+                <li><i class="fal fa-eye"></i>{{ format_number_in_k_notation( $data->view ) }}</li>
             </ul>
         </div>
         <div class="clearfix"></div>
@@ -262,15 +262,15 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                         </div>
                     </div>
                     <!-- box-widget  end -->
-                    
+
 					<!-- Weather Location box-widget -->
                     @include('front.elements.weather-detail')
     	            <!-- Weather Location box-widget end -->
-					
+
                     <!-- popular recent box-widget -->
                     @include('front.elements.popular-recent')
                     <!-- popular recent box-widget  end -->
-					
+
 					<!-- Editor box-widget -->
                     {{-- @include('front.elements.editor-choice') --}}
                     <!-- Editor box-widget  end -->

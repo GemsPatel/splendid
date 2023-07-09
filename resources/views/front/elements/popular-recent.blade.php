@@ -57,7 +57,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                         <ul class="pwic_opt">
                                             <li><span><i class="far fa-clock"></i>{{formatDate( 'd M Y', $data->created_at )}}</span></li>
                                             <li class="hide"><span><i class="far fa-comments-alt"></i> 16</span></li>
-                                            <li><span><i class="fal fa-eye"></i>{{$data->view}}</span></li>
+                                            <li><span><i class="fal fa-eye"></i>{{ format_number_in_k_notation( $data->view ) }}</span></li>
                                         </ul>
                                     </div>
                                 </div>

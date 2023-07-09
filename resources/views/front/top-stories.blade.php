@@ -59,7 +59,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                         <span class="video-date"><i class="far fa-clock"></i>{{formatDate( 'd M Y', $data['created_at'] )}}</span>
                                         <ul class="post-opt">
                                             <li><i class="far fa-comments-alt"></i>  25 </li>
-                                            <li><i class="fal fa-eye"></i> {{$data['view']}} </li>
+                                            <li><i class="fal fa-eye"></i> {{ format_number_in_k_notation( $data['view'] )}} </li>
                                         </ul>
                                     </div>
                                 </div>

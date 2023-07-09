@@ -63,7 +63,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                         <p>{{@$bestCategories[0]['blog_best_single_view']['short_description']}}</p>
                                         <ul class="post-opt">
                                             <li class="hide"><i class="far fa-comments-alt"></i> 6 </li>
-                                            <li><i class="fal fa-eye"></i>{{@$bestCategories[0]['blog_best_single_view']['view']}}</li>
+                                            <li><i class="fal fa-eye"></i>{{ format_number_in_k_notation( (int)@$bestCategories[0]['blog_best_single_view']['view'] ) }}</li>
                                         </ul>
                                         <div class="author-link">
                                             <a href="{{url('author-single')}}">
@@ -111,7 +111,7 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                                                     <p>{{@$data['blog_best_single_view']['short_description']}}</p>
                                                     <ul class="post-opt">
                                                         <li class="hide"><i class="far fa-comments-alt"></i> 6 </li>
-                                                        <li><i class="fal fa-eye"></i> {{@$data['blog_best_single_view']['view']}} </li>
+                                                        <li><i class="fal fa-eye"></i> {{ format_number_in_k_notation( (int)@$data['blog_best_single_view']['view'] ) }} </li>
                                                     </ul>
                                                     <div class="author-link">
                                                         <a href="{{url('author-single')}}">

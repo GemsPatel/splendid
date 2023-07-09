@@ -8,6 +8,7 @@
         $headerInfo = getHeaderInformation();
         $isRunAdvertisement = getConfigurationfield( "IS_RUN_ADVERTISEMENT" );
         $getThemeName = getConfigurationfield("FRONT_THEME");
+        $isRunAdvertisementParam = ( isset( $_GET['advt'] ) ) ? $_GET['advt'] : true;
         ?>
         <title>{{ $custom_page_title ?? $headerInfo->custom_page_title }}</title>
     	<base href="{{ url('/') }}" />
@@ -47,7 +48,7 @@
 		<meta name="twitter:label1" content="Est. reading time">
 		<meta name="twitter:data1" content="5 minutes">
 
-        @if( $isRunAdvertisement )
+        @if( $isRunAdvertisement && $isRunAdvertisementParam )
             <!-- Google tag (gtag.js) -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y7LZMV3DD"></script>
             <script>

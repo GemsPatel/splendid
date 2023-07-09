@@ -9,6 +9,7 @@ use App\Models\Admin\AdminMenu;
 use App\Models\Admin\Permission;
 use App\Models\SiteConfig;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Undocumented function
@@ -92,16 +93,25 @@ function getHostStories(){
 /**
  *
  */
-function getCurrentLocationDetails( $res='cityName' ){
+function getCurrentLocationDetails( $res='cityName', $checkReal=false ){
     $ip = FacadesRequest::ip();
+    $dummyIp = "150.107.232.217";
     if( $ip == "127.0.0.1" || strlen( $ip ) < 7 ){
-        $ip = "150.107.232.217";
+        $ip = $dummyIp;
     }
 
     $locationPosition = Location::get( $ip );
-    // echo "<pre>";
-    // print_r($locationPosition);die;
-    return $locationPosition->$res;
+    if( $checkReal ){
+        Storage::append( "storage/liveIPs-".date( 'd-m-Y' ).".txt", $locationPosition );
+        if( $ip === $dummyIp ){
+            return false;
+        } else {
+            return true;
+        }
+    } else {
+        // $locationPosition = Location::get( $ip );
+        return $locationPosition->$res;
+    }
 }
 
 /**
@@ -172,4 +182,34 @@ function createTinyUrl(){
 			Blogs::where( [ "id" => $ar->id ] )->update( [ "short_url" => $short_url ] );
 		}
 	}
+}
+
+/**
+ *
+ */
+if ( !function_exists('format_number_in_k_notation') ) {
+    function format_number_in_k_notation(int $number): string
+    {
+        $suffixByNumber = function () use ($number) {
+            if ($number < 1000) {
+                return sprintf('%d', $number);
+            }
+
+            if ($number < 1000000) {
+                return sprintf('%d%s', floor($number / 1000), 'K+');
+            }
+
+            if ($number >= 1000000 && $number < 1000000000) {
+                return sprintf('%d%s', floor($number / 1000000), 'M+');
+            }
+
+            if ($number >= 1000000000 && $number < 1000000000000) {
+                return sprintf('%d%s', floor($number / 1000000000), 'B+');
+            }
+
+            return sprintf('%d%s', floor($number / 1000000000000), 'T+');
+        };
+
+        return $suffixByNumber();
+    }
 }

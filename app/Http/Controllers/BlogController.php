@@ -13,7 +13,7 @@ class BlogController extends Controller
      *
      */
     function index( Request $request ){
-		
+
         // $topSliderArr = Blogs::with('blog_tag_map', 'category', 'author')//, 'sub_category'
         //             ->where( [ 'status' => 1 ] )
         //             ->orderBy( 'id', 'desc' )
@@ -61,10 +61,10 @@ class BlogController extends Controller
 				return Redirect::to( url( '/view/'.$blog->slug ) );
 			}
 		}
-		
+
 		return Redirect::to( url( '/' ) );
 	}
-	
+
     /**
      *
      */
@@ -118,7 +118,9 @@ class BlogController extends Controller
         $prevBlog = Blogs::select('id', 'slug', 'title', 'image')->where( 'id', '<', $data->id )->where( 'status', 1 )->limit(1)->orderBy( 'id', 'DESC' )->get();
         $nextBlog = Blogs::select('id', 'slug', 'title', 'image')->where( 'id', '>', $data->id )->where( 'status', 1 )->limit(1)->orderBy( 'id', 'ASC' )->get();
 
-        Blogs::increment( 'view', 1 ); // count + 5
+        if ( getCurrentLocationDetails( 'cityName', 1 ) ){
+            Blogs::increment( 'view', 1 ); // count + 1
+        }
 
         $custom_page_title = $data->title.' - TimesOfReading';
         $meta_description = $data->short_description;

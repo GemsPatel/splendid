@@ -61,7 +61,11 @@
 																<td>
 																	<img src="{{url('storage/app/'.$ar->image)}}" alt="{{ $ar->title }}" height="55px">
 																</td>
-                                                                <td>{{ $ar->title }}</td>
+                                                                <td>
+                                                                    <a href="{{url( 'view/'.$ar->slug.'?advt=false' )}}" title="{{ $ar->title }}">
+                                                                        {{ $ar->title }}
+                                                                    </a>
+                                                                </td>
                                                                 <td class="text-center">{{ $ar->category->title }}</td>
                                                                 <td class="text-center">
                                                                     @if( $ar->status == 0 )
@@ -70,16 +74,13 @@
                                                                             <span class="badge badge-pill badge-success"> Enabled </span>
                                                                     @endif
                                                                 </td>
-                                                                <td class="text-center">{{ $ar->view }}</td>
+                                                                <td class="text-center">{{ format_number_in_k_notation( $ar->view ) }}</td>
 																<td class="text-center">{{ formatDate( "d-m-Y h:i", $ar->updated_at ) }}</td>
 																<td class="d-flex text-center">
                                                                     <div class="pr-2">
                                                                         <a href="{{ route('admin.blogs.edit', [$ar->id]) }}" class="btn btn-primary btn-size p-0 d-flex align-items-center justify-content-center"><i class="fas fa-pencil-alt fa-sm" aria-hidden="true"></i></a>
                                                                     </div>
                                                                     <div class="pr-2">
-                                                                        <a href="{{url( 'view/'.$ar->slug )}}" class="btn btn-success btn-size p-0 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" target="_blank"><i class="fas fa-eye fa-sm" aria-hidden="true"></i></a>
-                                                                    </div>
-																	<div class="pr-2">
                                                                         <a href="{{url( 'short/'.$ar->short_url )}}" class="btn btn-success btn-size p-0 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" target="_blank"><i class="fas fa-link fa-sm" aria-hidden="true"></i></a>
                                                                     </div>
                                                                 </td>
