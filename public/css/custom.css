@@ -110,3 +110,23 @@
 .select2-container .select2-selection--multiple .select2-selection__rendered{display: table-row-group !important;}
 .select2-container--default .select2-selection--multiple .select2-selection__choice{ background-color: #343a40 !important; border: 1px solid #343a40 !important; padding: unset !important; padding-left: 15px !important; padding-right: 5px !important; }
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{color: #f00 !important;padding: 0px !important; border-right: 0px solid #aaa !important; }
+.playpause {
+     border: 0;
+     background: transparent;
+     box-sizing: border-box;
+     width: 0;
+     height: 40px;
+     border-color: transparent transparent transparent #202020;
+     transition: 100ms all ease;
+     cursor: pointer;
+     border-style: solid;
+     border-width: 20px 0 20px 30px;
+	 margin-bottom: 30px;
+}
+ .playpause.paused {
+     border-style: double;
+     border-width: 0px 0 0px 30px;
+}
+ .playpause:hover {
+     border-color: transparent transparent transparent #404040;
+}

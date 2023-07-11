@@ -77,6 +77,10 @@ $getThemeName = getConfigurationfield("FRONT_THEME");
                             <a class="print-btn" href="javascript:window.print()" data-microtip-position="bottom"><span>Print</span><i class="fal fa-print"></i></a>
                         </div>
                         <div class="clearfix"></div>
+						<button class='playpause'></button>
+						<button class="hide" id="speak">Speak</button>
+						<button class="hide" id="pause">Pause</button>
+						<button class="hide" id="resume">Resume</button>
                         <div class="single-post-content_text" id="font_chage">
                             {{-- @include('blog-html.'.$data->slug) --}}
                             {!! $data->description !!}

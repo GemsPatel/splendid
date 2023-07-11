@@ -25,6 +25,7 @@
 <script src="{{url('public/js/jquery.min.js')}}"></script>
 <script src="{{url('public/js/plugins.js')}}"></script>
 <script src="{{url('public/js/scripts.js')}}"></script>
+<script src="{{url('public/js/custom.js')}}"></script>
 </body>
 </html>
 <!-- https://publishers.monetag.com/earnings -->

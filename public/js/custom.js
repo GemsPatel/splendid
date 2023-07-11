@@ -11,7 +11,7 @@ function getUrlName(str, display_alias = 'alias_slug' )
 }
 
 /**
- * 
+ *
  */
 function setSearchPaginationPlace( id ){
 	$(".buttons-excel").addClass('ml-1');
@@ -21,7 +21,7 @@ function setSearchPaginationPlace( id ){
 }
 
 /**
- * 
+ *
  */
 $("#plan_mode").on( "change", function(){
 	var mode = $(this).val();
@@ -43,7 +43,7 @@ $("#plan_mode").on( "change", function(){
   */
 $("#addBlogTag").on( "click", function (e) {
 	var tag_name = $("#BlogTags-txt").val();
-	if (tag_name.length > 0) 
+	if (tag_name.length > 0)
 	{
 		var result = tag_name.split(',');
 		$.each( result, function( i, name ){
@@ -57,7 +57,7 @@ $("#addBlogTag").on( "click", function (e) {
 	$("#BlogTags-txt").val(null);
 });
 
-/** 
+/**
  * Remove select tag
  */
 $("#blog-tag-store").on("click", ".delTag", function () {
@@ -69,7 +69,7 @@ $("#blog-tag-store").on("click", ".delTag", function () {
   */
   $("#addTitle").on( "click", function (e) {
 	var tag_name = $("#titletag-txt").val();
-	if (tag_name.length > 0) 
+	if (tag_name.length > 0)
 	{
 		var result = tag_name.split(',');
 		$.each( result, function( i, name ){
@@ -83,7 +83,7 @@ $("#blog-tag-store").on("click", ".delTag", function () {
 	$("#titletag-txt").val(null);
 });
 
-/** 
+/**
  * Remove select title
  */
 $("#title_store").on("click", ".delTitle", function () {
@@ -95,7 +95,7 @@ $("#title_store").on("click", ".delTitle", function () {
   */
   $("#authorType").on( "click", function (e) {
 	var type_text = $("#author_type_text").val();
-	if (type_text.length > 0) 
+	if (type_text.length > 0)
 	{
 		var result = type_text.split(',');
 		$.each( result, function( i, name ){
@@ -108,7 +108,7 @@ $("#title_store").on("click", ".delTitle", function () {
 	$("#type_text").val(null);
 });
 
-/** 
+/**
  * Remove selected author type
  */
 $("#author_type_store").on("click", ".delTag", function () {
@@ -120,7 +120,7 @@ $("#author_type_store").on("click", ".delTag", function () {
   */
  $("#addAuthorTag").on( "click", function (e) {
 	var author_text = $("#author_text").val();
-	if (author_text.length > 0) 
+	if (author_text.length > 0)
 	{
 		var result = author_text.split(',');
 		$.each( result, function( i, name ){
@@ -133,7 +133,7 @@ $("#author_type_store").on("click", ".delTag", function () {
 	$("#author_text").val(null);
 });
 
-/** 
+/**
  * Remove selected author type
  */
 $("#author_tag_store").on("click", ".delTag", function () {
@@ -145,7 +145,7 @@ $("#author_tag_store").on("click", ".delTag", function () {
   */
  $("#addAuthor").on( "click", function (e) {
 	var author_txt = $("#author_txt").val();
-	if (author_txt.length > 0) 
+	if (author_txt.length > 0)
 	{
 		var result = author_txt.split(',');
 		$.each( result, function( i, name ){
@@ -159,7 +159,7 @@ $("#author_tag_store").on("click", ".delTag", function () {
 	$("#author_txt").val(null);
 });
 
-/** 
+/**
  * Remove selected author
  */
 $("#author_store").on("click", ".delAuthor", function () {
@@ -207,7 +207,7 @@ $("#author_store").on("click", ".delAuthor", function () {
 	$("#country_amount").val(null);
 });
 
-/** 
+/**
  * Remove select tag
  */
 $("#country_plan_store").on("click", ".delPlanCountry", function () {
@@ -222,7 +222,7 @@ $("#country_plan_store").on("click", ".delPlanCountry", function () {
   */
   $("#addGenre").on( "click", function (e) {
 	var tag_name = $("#genre_search_txt").val();
-	if (tag_name.length > 0) 
+	if (tag_name.length > 0)
 	{
 		var result = tag_name.split(',');
 		$.each( result, function( i, name ){
@@ -237,7 +237,7 @@ $("#country_plan_store").on("click", ".delPlanCountry", function () {
 	$("#genre_search_txt").val(null);
 });
 
-/** 
+/**
  * Remove select genre
  */
 $("#genreStore").on("click", ".delGenre", function () {
@@ -249,7 +249,7 @@ $("#genreStore").on("click", ".delGenre", function () {
   */
   $("#addSubGenre").on( "click", function (e) {
 	var tag_name = $("#sub_category_search_txt").val();
-	if (tag_name.length > 0) 
+	if (tag_name.length > 0)
 	{
 		var result = tag_name.split(',');
 		$.each( result, function( i, name ){
@@ -264,7 +264,7 @@ $("#genreStore").on("click", ".delGenre", function () {
 	$("#sub_category_search_txt").val(null);
 });
 
-/** 
+/**
  * Remove select sub genre
  */
 $("#genreSubStore").on("click", ".delSubGenre", function () {
@@ -276,7 +276,7 @@ $("#genreSubStore").on("click", ".delSubGenre", function () {
   */
   $("#addNarratorActor").on( "click", function (e) {
 	var tag_name = $("#narrator_actor_txt").val();
-	if (tag_name.length > 0) 
+	if (tag_name.length > 0)
 	{
 		var result = tag_name.split(',');
 		$.each( result, function( i, name ){
@@ -291,7 +291,7 @@ $("#genreSubStore").on("click", ".delSubGenre", function () {
 	$("#narrator_actor_txt").val(null);
 });
 
-/** 
+/**
  * Remove select sub genre
  */
 $("#narrator_actor_store").on("click", ".delNarrator", function () {
@@ -310,7 +310,7 @@ function edit(element) {
 }
 
 /**
- * 
+ *
  */
 $(".parent-category-id").on( "change", function(){
 	var openGenre = $(this).val();
@@ -319,12 +319,12 @@ $(".parent-category-id").on( "change", function(){
 });
 
 /**
- * 
+ *
  */
- $(".country-id, .language-id, .title-id").select2();
+//  $(".country-id, .language-id, .title-id").select2();
 
 /**
- * 
+ *
  */
 $("#select_country_txt").on( "change", function(){
 	$("#country_amount").removeAttr('disabled');
@@ -339,3 +339,63 @@ $('.allow-float-number').on( 'keypress', function(event) {
 	  event.preventDefault();
 	}
 });
+
+if( $("#font_chage").length > 0 ){
+    var playCount = 0;
+	$( window ).on("load", function() {
+		var btn = $(".playpause");
+		btn.click(function() {
+			btn.toggleClass("paused");
+            if( playCount == 0 ){
+                $("#speak").trigger("click");
+                playCount = 1;
+            } else if( playCount == 1 ){
+                $("#pause").trigger("click");
+                playCount = 2;
+            } else {
+                $("#resume").trigger("click");
+                playCount = 1;
+            }
+
+			return false;
+		});
+
+        // Get the speech synthesis button and content div
+        const contentDiv = document.getElementById('font_chage');
+        const speakButton = document.getElementById('speak');
+        const pauseButton = document.getElementById('pause');
+        const resumeButton = document.getElementById('resume');
+
+        // Attach click event listener to the speak button
+        speakButton.addEventListener('click', () => {
+            // Create a new SpeechSynthesisUtterance object
+            const speech = new SpeechSynthesisUtterance();
+
+            // Set the text to be spoken to the content of the div
+            speech.text = contentDiv.innerText;
+
+            // Use the default speech synthesis voice
+            speech.voice = speechSynthesis.getVoices()[0];
+
+            // Start speaking
+            speechSynthesis.speak(speech);
+        });
+
+        // Attach click event listener to the pause button
+        pauseButton.addEventListener('click', () => {
+            // Pause speech synthesis if it's currently speaking
+            if (speechSynthesis.speaking) {
+                speechSynthesis.pause();
+            }
+        });
+
+        // Attach click event listener to the resume button
+        resumeButton.addEventListener('click', () => {
+            // Resume speech synthesis if it's currently paused
+            if (speechSynthesis.paused) {
+                speechSynthesis.resume();
+            }
+        });
+	});
+
+}

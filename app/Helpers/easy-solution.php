@@ -93,14 +93,13 @@ function getHostStories(){
 /**
  *
  */
-function getCurrentLocationDetails( $res='cityName', $checkReal=false ){
+function getCurrentLocationDetails( $res='cityName' ){
     $ip = FacadesRequest::ip();
     if( $ip == "127.0.0.1" || strlen( $ip ) < 7 ){
-        $ip = "150.107.232.217";
+        $ip = "163.53.179.67";
     }
-
     $locationPosition = Location::get( $ip );
-	Storage::append( "storage/liveIPs-".date( 'd-m-Y' ).".txt", $locationPosition );
+	Storage::append( "liveIPs-".date( 'd-m-Y' ).".txt", json_encode( $locationPosition ) );
 	return $locationPosition->$res;
 }
 

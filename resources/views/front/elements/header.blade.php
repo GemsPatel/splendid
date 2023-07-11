@@ -27,6 +27,7 @@
         <link type="text/css" rel="stylesheet" href="{{url('public/css/plugins.css')}}">
         <link type="text/css" rel="stylesheet" href="{{url('public/css/style.css?v=0.3.1')}}">
         <link type="text/css" rel="stylesheet" href="{{url('public/css/color.css')}}">
+		<link type="text/css" rel="stylesheet" href="{{url('public/css/custom.css')}}">
 
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="{{url('public/img/favicon.ico?v=0.1.1')}}">

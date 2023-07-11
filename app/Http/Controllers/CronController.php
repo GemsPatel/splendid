@@ -278,7 +278,6 @@ class CronController extends Controller
      *
      */
     public function testTextToSpeech(){
-        echo "here";die;
         // convert website articles & blog posts to an audio file
         return TextToSpeech::source('website')
             ->convert('https://medium.com/cloud-academy-inc/an-introduction-to-aws-polly-s3-and-php-479490bffcbd');
